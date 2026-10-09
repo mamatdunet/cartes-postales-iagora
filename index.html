@@ -280,6 +280,20 @@
       .voie p { margin-bottom: 0; }
     }
 
+    /* Écrans peu hauts (portables 1280×720…) : on resserre pour éviter le scroll */
+    @media (min-width: 861px) and (max-height: 780px) {
+      header { padding-top: 14px; }
+      main { padding: 10px 0 16px; }
+      h1 { font-size: clamp(38px, 6vw, 76px); }
+      .lead { margin-top: 10px; font-size: 17px; }
+      .choose { margin: 18px 0 10px; }
+      .voie { padding: 16px 22px; }
+      .voie h2 { margin: 6px 0 4px; }
+      .voie p { font-size: 15px; line-height: 1.45; margin-bottom: 14px; }
+      .num b { font-size: 48px; top: 14px; right: 20px; }
+      footer { padding: 10px 0 14px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .voie, .cta, .tip { transition: none; }
       .voie:hover { transform: none; }
@@ -316,7 +330,7 @@
         <div class="voie">
           <div class="num">Voie <b>2</b></div>
           <h2>IA frugale</h2>
-          <p>Une IA qui tourne en local sur l'ordi, en pixel art. <em>Léger et rapide, même sur des ordis de 2019.</em></p>
+          <p>Une IA qui tourne à 100% en local sur l'ordinateur. L'outil est capable de créer des symboles en pixel art&nbsp;: un moyen de générer des images suffisamment légères pour tourner sur des ordis de 2019 comme ceux de l'atelier <em>(même si leur précision fait pâle figure à côté des ténors du marché)</em>.</p>
           <div class="cta-box">
             <a class="cta" href="https://cartes-iagora.vercel.app/" target="_blank" rel="noopener">C'est parti ➭</a>
             <span class="url">cartes-iagora.vercel.app</span>
