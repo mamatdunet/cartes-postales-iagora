@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cartes Post-IA-les</title>
+  <meta name="description" content="Atelier IAgora : choisis ta voie pour créer ta carte postale, avec ou sans IA.">
+  <link rel="icon" href="assets/logo-iagora.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Heebo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-600: #3045d1;
+      --blue-50: #eef0fc;
+      --pink-600: #ff50be;
+      --pink-700: #d62e96;
+      --pink-50: #ffeef8;
+      --ink-900: #000000;
+      --ink-800: #14141a;
+      --ink-500: #5c5c68;
+      --white: #ffffff;
+      --font-display: "Anton", "Archivo Narrow", "Helvetica Neue", Arial, sans-serif;
+      --font-body: "Heebo", "Helvetica Neue", Arial, sans-serif;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+      --shadow-lg: 0 18px 48px rgba(20, 20, 26, .14);
+      --ease-out: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      color: var(--ink-800);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* En-tête */
+    header {
+      padding: 20px 0 0;
+    }
+    header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .logo { height: 26px; width: auto; display: block; }
+    .tag {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-500);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 24px 0 32px;
+    }
+
+    /* Titre */
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--pink-700);
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(38px, 8.6vw, 96px);
+      line-height: .95;
+      letter-spacing: .005em;
+      text-transform: uppercase;
+      color: var(--blue-600);
+    }
+    .nowrap { white-space: nowrap; }
+    .lead {
+      max-width: 760px;
+      margin: 14px 0 0;
+      font-size: clamp(16px, 1.6vw, 19px);
+      line-height: 1.55;
+    }
+    .lead strong { font-weight: 700; color: var(--ink-900); }
+
+    /* Voies */
+    .choose {
+      margin: 32px 0 14px;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 22px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink-900);
+    }
+    .voies {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .voie {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 26px 22px;
+      border: 2px solid var(--ink-900);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      color: inherit;
+      text-decoration: none;
+      transition: transform 120ms var(--ease-out), box-shadow 220ms var(--ease-out), border-color 220ms var(--ease-out);
+    }
+    .voie:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--blue-600);
+    }
+    .voie:active { transform: scale(.97); }
+    .voie:focus-visible {
+      outline: none;
+      border-color: var(--blue-600);
+      box-shadow: 0 0 0 4px var(--blue-50);
+    }
+
+    .num {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--pink-700);
+    }
+    .num b {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 56px;
+      line-height: .8;
+      letter-spacing: 0;
+      color: var(--pink-600);
+    }
+    .voie h2 {
+      margin: 10px 0 6px;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(28px, 2.8vw, 38px);
+      line-height: .95;
+      letter-spacing: .005em;
+      text-transform: uppercase;
+      color: var(--ink-900);
+    }
+    .voie p {
+      margin: 0 0 18px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ink-800);
+    }
+    .voie p em {
+      font-style: normal;
+      color: var(--ink-500);
+    }
+
+    .cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-self: flex-start;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border-radius: var(--radius-pill);
+      background: var(--blue-600);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 17px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: background-color 220ms var(--ease-out);
+    }
+    .voie:hover .cta { background: var(--pink-600); color: var(--ink-900); }
+    .url {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--ink-500);
+    }
+
+    /* Bas de page */
+    footer {
+      padding: 14px 0 20px;
+      border-top: 2px solid var(--ink-900);
+    }
+    footer .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px 24px;
+      font-size: 14px;
+      color: var(--ink-500);
+    }
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-weight: 600;
+      color: var(--ink-800);
+    }
+    .steps li span { color: var(--pink-700); margin-right: 6px; }
+
+    @media (max-width: 860px) {
+      .voies { grid-template-columns: 1fr; gap: 14px; }
+      .voie { padding: 18px 20px; }
+      .voie h2 { margin-top: 4px; }
+      .num b { font-size: 40px; top: 14px; right: 20px; }
+      .choose { margin-top: 24px; }
+      .tag { display: none; }
+    }
+
+    @media (max-width: 860px) and (min-width: 560px) {
+      .voie { display: grid; grid-template-columns: 1fr auto; column-gap: 20px; }
+      .voie .num, .voie h2, .voie p { grid-column: 1; }
+      .voie .cta-box { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
+      .voie p { margin-bottom: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .voie, .cta { transition: none; }
+      .voie:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a href="https://iagora.fr/" aria-label="IAgora"><img class="logo" src="assets/logo-iagora.png" alt="IAgora"></a>
+      <span class="tag">Focus démo · En continu · Tout public</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <p class="eyebrow">Atelier IAgora</p>
+      <h1>Cartes <span class="nowrap">Post-IA-les</span></h1>
+      <p class="lead">Imagine ta carte postale, crée-la avec ou sans IA, et repars avec ton <strong>tirage photo 10×15 imprimé sur place en 20&nbsp;secondes</strong>.</p>
+
+      <h2 class="choose">Choisis ta voie ➭</h2>
+
+      <div class="voies">
+        <a class="voie" href="https://wordart-iagora.vercel.app/" target="_blank" rel="noopener">
+          <div class="num">Voie <b>1</b></div>
+          <h2>Ordinosaure</h2>
+          <p>Sans IA, façon Word&nbsp;Art&nbsp;97.</p>
+          <div class="cta-box">
+            <span class="cta">C'est parti ➭</span>
+            <span class="url">wordart-iagora.vercel.app</span>
+          </div>
+        </a>
+
+        <a class="voie" href="https://cartes-iagora.vercel.app/" target="_blank" rel="noopener">
+          <div class="num">Voie <b>2</b></div>
+          <h2>IA frugale</h2>
+          <p>Une IA qui tourne en local sur l'ordi, en pixel art. <em>Léger et rapide, même sur des ordis de 2019.</em></p>
+          <div class="cta-box">
+            <span class="cta">C'est parti ➭</span>
+            <span class="url">cartes-iagora.vercel.app</span>
+          </div>
+        </a>
+
+        <a class="voie" href="https://www.midjourney.com/imagine" target="_blank" rel="noopener">
+          <div class="num">Voie <b>3</b></div>
+          <h2>IA Rolls-Royce</h2>
+          <p>Le grand jeu, via Midjourney. <em>Prompts, itérations, styles&nbsp;: tout est possible.</em></p>
+          <div class="cta-box">
+            <span class="cta">C'est parti ➭</span>
+            <span class="url">midjourney.com/imagine</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <ol class="steps">
+        <li><span>1</span>J'imagine</li>
+        <li><span>2</span>Je crée</li>
+        <li><span>3</span>J'imprime en 10×15</li>
+        <li><span>4</span>J'envoie à un proche</li>
+      </ol>
+      <span>L'IA par tous et pour tous / iagora.fr</span>
+    </div>
+  </footer>
+</body>
+</html>
