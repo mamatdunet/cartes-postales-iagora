@@ -15,7 +15,9 @@
       --blue-50: #eef0fc;
       --pink-600: #ff50be;
       --pink-700: #d62e96;
+      --pink-100: #ffd9f0;
       --pink-50: #ffeef8;
+      --radius-md: 12px;
       --ink-900: #000000;
       --ink-800: #14141a;
       --ink-500: #5c5c68;
@@ -123,7 +125,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      padding: 24px 26px 22px;
+      padding: 20px 26px 20px;
       border: 2px solid var(--ink-900);
       border-radius: var(--radius-lg);
       background: var(--white);
@@ -136,11 +138,18 @@
       box-shadow: var(--shadow-lg);
       border-color: var(--blue-600);
     }
-    .voie:active { transform: scale(.97); }
-    .voie:focus-visible {
-      outline: none;
+    .voie:has(.cta:active) { transform: scale(.97); }
+    .voie:has(.cta:focus-visible) {
       border-color: var(--blue-600);
       box-shadow: 0 0 0 4px var(--blue-50);
+    }
+    .cta:focus-visible { outline: none; }
+    /* Le bouton bleu rend toute la carte cliquable */
+    .cta::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
     }
 
     .num {
@@ -152,7 +161,7 @@
     }
     .num b {
       position: absolute;
-      top: 18px;
+      top: 16px;
       right: 24px;
       font-family: var(--font-display);
       font-weight: 400;
@@ -196,9 +205,31 @@
       font-size: 17px;
       letter-spacing: .04em;
       text-transform: uppercase;
+      text-decoration: none;
       transition: background-color 220ms var(--ease-out);
     }
     .voie:hover .cta { background: var(--pink-600); color: var(--ink-900); }
+    .voie:has(.tip:hover) .cta { background: var(--blue-600); color: var(--white); }
+
+    /* Lien mis en avant (voie 3), au-dessus du lien de carte */
+    .tip {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-top: 12px;
+      padding: 8px 12px;
+      border: 2px solid var(--pink-600);
+      border-radius: var(--radius-md);
+      background: var(--pink-50);
+      color: var(--ink-900);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.35;
+      text-decoration: none;
+      transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out);
+    }
+    .tip:hover { background: var(--pink-600); }
+    .tip:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--pink-100); }
     .url {
       display: block;
       margin-top: 10px;
@@ -245,11 +276,12 @@
       .voie { display: grid; grid-template-columns: 1fr auto; column-gap: 20px; }
       .voie .num, .voie h2, .voie p { grid-column: 1; }
       .voie .cta-box { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
+      .voie .tip { grid-column: 1 / -1; }
       .voie p { margin-bottom: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .voie, .cta { transition: none; }
+      .voie, .cta, .tip { transition: none; }
       .voie:hover { transform: none; }
     }
   </style>
@@ -271,35 +303,36 @@
       <h2 class="choose">Choisis ta voie ➭</h2>
 
       <div class="voies">
-        <a class="voie" href="https://wordart-iagora.vercel.app/" target="_blank" rel="noopener">
+        <div class="voie">
           <div class="num">Voie <b>1</b></div>
           <h2>Ordinosaure</h2>
           <p>Sans IA, façon Word&nbsp;Art&nbsp;97.</p>
           <div class="cta-box">
-            <span class="cta">C'est parti ➭</span>
+            <a class="cta" href="https://wordart-iagora.vercel.app/" target="_blank" rel="noopener">C'est parti ➭</a>
             <span class="url">wordart-iagora.vercel.app</span>
           </div>
-        </a>
+        </div>
 
-        <a class="voie" href="https://cartes-iagora.vercel.app/" target="_blank" rel="noopener">
+        <div class="voie">
           <div class="num">Voie <b>2</b></div>
           <h2>IA frugale</h2>
           <p>Une IA qui tourne en local sur l'ordi, en pixel art. <em>Léger et rapide, même sur des ordis de 2019.</em></p>
           <div class="cta-box">
-            <span class="cta">C'est parti ➭</span>
+            <a class="cta" href="https://cartes-iagora.vercel.app/" target="_blank" rel="noopener">C'est parti ➭</a>
             <span class="url">cartes-iagora.vercel.app</span>
           </div>
-        </a>
+        </div>
 
-        <a class="voie" href="https://www.midjourney.com/imagine" target="_blank" rel="noopener">
+        <div class="voie">
           <div class="num">Voie <b>3</b></div>
           <h2>IA Rolls-Royce</h2>
           <p>Le grand jeu, via Midjourney. <em>Prompts, itérations, styles&nbsp;: tout est possible.</em></p>
           <div class="cta-box">
-            <span class="cta">C'est parti ➭</span>
+            <a class="cta" href="https://www.midjourney.com/imagine" target="_blank" rel="noopener">C'est parti ➭</a>
             <span class="url">midjourney.com/imagine</span>
           </div>
-        </a>
+          <a class="tip" href="https://iagora-composer-image.vercel.app/" target="_blank" rel="noopener">★ Quelques idées pour composer son image</a>
+        </div>
       </div>
     </div>
   </main>
