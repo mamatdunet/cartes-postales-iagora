@@ -76,7 +76,13 @@
     .back:hover { color: var(--pink-700); }
 
     /* Intro */
-    .intro { padding: 24px 0 8px; }
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 24px 48px;
+      padding: 24px 0 8px;
+    }
     .eyebrow {
       margin: 0 0 8px;
       font-size: 13px;
@@ -225,27 +231,28 @@
     }
     .vide p { margin: 0; color: var(--ink-500); }
 
-    /* Album Midjourney */
+    /* Album Midjourney : carré compact à droite de l'intro */
     .album {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 16px 32px;
-      margin: 8px 0 56px;
-      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: 260px;
+      padding: 22px 22px 24px;
       border-radius: var(--radius-lg);
       background: var(--pink-50);
     }
     .album h2 {
-      margin: 0 0 4px;
+      margin: 0;
       font-family: var(--font-display);
       font-weight: 400;
-      font-size: clamp(26px, 2.8vw, 36px);
+      font-size: 26px;
       line-height: 1;
       text-transform: uppercase;
       color: var(--ink-900);
     }
-    .album p { margin: 0; }
+    .album p { margin: 0 0 4px; font-size: 15px; line-height: 1.45; }
+    .album .btn { padding: 10px 20px; font-size: 16px; }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -387,6 +394,10 @@
       .vue.avec-prompt img { max-height: calc(100vh - 32vh - 170px); }
     }
 
+    @media (max-width: 860px) {
+      .intro { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 640px) {
       .mur { columns: 2 140px; column-gap: 16px; }
       .carte { padding: 8px 8px 8px; margin-bottom: 22px; }
@@ -394,7 +405,7 @@
       .tampon { width: 42px; height: 42px; top: -13px; right: 12px; }
       .legende { font-size: 10px; margin-top: 6px; }
       .legende span:last-child { display: none; }
-      .album { grid-template-columns: 1fr; padding: 22px; }
+      .album { width: 100%; padding: 20px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -413,9 +424,16 @@
 
   <main class="wrap">
     <section class="intro">
-      <p class="eyebrow">IAgora Paris · Samedi 10 octobre 2026</p>
-      <h1>La galerie des cartes</h1>
-      <p class="lead">Toutes les cartes postales imaginées, créées et imprimées par les participantes et participants de l'atelier Cartes Post-IA-les. Clique sur une carte pour la voir en grand et, quand il est disponible, découvrir le prompt qui l'a fait naître.</p>
+      <div class="intro-texte">
+        <p class="eyebrow">IAgora Paris · Samedi 10 octobre 2026</p>
+        <h1>La galerie des cartes</h1>
+        <p class="lead">Toutes les cartes postales imaginées, créées et imprimées par les participantes et participants de l'atelier Cartes Post-IA-les. Clique sur une carte pour la voir en grand et, quand il est disponible, découvrir le prompt qui l'a fait naître.</p>
+      </div>
+      <aside class="album" aria-labelledby="album-titre">
+        <h2 id="album-titre">Toutes les images Midjourney</h2>
+        <p>Les créations de la voie 3, y compris celles qui n'ont pas été imprimées.</p>
+        <a class="btn" id="album-lien" href="#" target="_blank" rel="noopener">Voir l'album ➭</a>
+      </aside>
     </section>
 
     <div class="toolbar" id="toolbar" hidden>
@@ -435,13 +453,6 @@
       <p>On numérise les tirages de l'atelier : reviens dans quelques jours.</p>
     </div>
 
-    <section class="album" aria-labelledby="album-titre">
-      <div>
-        <h2 id="album-titre">Toutes les images Midjourney</h2>
-        <p>Les images créées sur la voie 3, y compris celles qui n'ont pas été imprimées.</p>
-      </div>
-      <a class="btn" id="album-lien" href="#" target="_blank" rel="noopener">Voir l'album ➭</a>
-    </section>
   </main>
 
   <footer>
