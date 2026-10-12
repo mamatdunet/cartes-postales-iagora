@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galerie des cartes</title>
+  <meta name="description" content="Toutes les cartes postales créées à l'atelier Cartes Post-IA-les, IAgora Paris, le samedi 10 octobre 2026.">
+  <link rel="icon" href="../assets/logo-iagora.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Heebo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-600: #3045d1;
+      --blue-50: #eef0fc;
+      --pink-600: #ff50be;
+      --pink-700: #d62e96;
+      --pink-100: #ffd9f0;
+      --pink-50: #ffeef8;
+      --ink-900: #000000;
+      --ink-800: #14141a;
+      --ink-500: #5c5c68;
+      --ink-300: #c4c4cc;
+      --ink-200: #e3e3e9;
+      --ink-100: #f2f2f6;
+      --white: #ffffff;
+      --font-display: "Anton", "Archivo Narrow", "Helvetica Neue", Arial, sans-serif;
+      --font-body: "Heebo", "Helvetica Neue", Arial, sans-serif;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+      --shadow-sm: 0 1px 2px rgba(20, 20, 26, .08);
+      --shadow-md: 0 6px 20px rgba(20, 20, 26, .10);
+      --shadow-lg: 0 18px 48px rgba(20, 20, 26, .14);
+      --ease-out: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: var(--white);
+      color: var(--ink-800);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* En-tête collant */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    .logo { height: 26px; width: auto; display: block; }
+    .back {
+      color: var(--ink-900);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 220ms var(--ease-out);
+    }
+    .back:hover { color: var(--pink-700); }
+
+    /* Intro */
+    .intro { padding: 24px 0 8px; }
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--pink-700);
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(40px, 6.4vw, 88px);
+      line-height: .95;
+      letter-spacing: .005em;
+      text-transform: uppercase;
+      color: var(--blue-600);
+    }
+    .lead { max-width: 760px; margin: 14px 0 0; font-size: clamp(16px, 1.6vw, 19px); }
+
+    /* Barre d'outils */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 24px;
+      margin: 28px 0 8px;
+    }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filters button {
+      padding: 8px 16px;
+      border: 2px solid var(--ink-900);
+      border-radius: var(--radius-pill);
+      background: var(--white);
+      color: var(--ink-900);
+      font: 600 14px/1.2 var(--font-body);
+      cursor: pointer;
+      transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out), border-color 220ms var(--ease-out);
+    }
+    .filters button:hover { border-color: var(--pink-600); color: var(--pink-700); }
+    .filters button[aria-pressed="true"] { background: var(--blue-600); border-color: var(--blue-600); color: var(--white); }
+    .filters button:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--blue-50); }
+    .count { font-size: 14px; font-weight: 600; color: var(--ink-500); }
+
+    /* Mur de cartes : colonnes façon tableau d'affichage */
+    .mur {
+      columns: 4 240px;
+      column-gap: 28px;
+      padding: 20px 0 40px;
+    }
+
+    /* La carte postale */
+    .carte {
+      --tilt: 0deg;
+      position: relative;
+      display: block;
+      width: 100%;
+      margin: 0 0 32px;
+      padding: 12px 12px 34px;
+      border: 1px solid var(--ink-200);
+      border-radius: 4px;
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+      transform: rotate(var(--tilt));
+      break-inside: avoid;
+      cursor: zoom-in;
+      transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
+      font: inherit;
+      text-align: left;
+    }
+    .carte:nth-child(3n+1) { --tilt: -1.2deg; }
+    .carte:nth-child(3n+2) { --tilt: .8deg; }
+    .carte:nth-child(5n)   { --tilt: -.4deg; }
+    .carte:hover, .carte:focus-visible {
+      transform: rotate(0deg) translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      outline: none;
+    }
+    .carte:focus-visible { box-shadow: var(--shadow-lg), 0 0 0 4px var(--blue-50), 0 0 0 6px var(--blue-600); }
+    .carte img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 2px;
+      background: var(--ink-100);
+    }
+
+    /* Timbre dentelé, qui déborde du coin de la carte */
+    .timbre {
+      position: absolute;
+      top: -14px;
+      right: -12px;
+      width: 50px;
+      height: 60px;
+      padding: 5px;
+      background: var(--white);
+      -webkit-mask:
+        radial-gradient(circle 3px at center, #0000 92%, #000) -3.5px -3.5px / 7px 7px,
+        linear-gradient(#000 0 0) content-box;
+              mask:
+        radial-gradient(circle 3px at center, #0000 92%, #000) -3.5px -3.5px / 7px 7px,
+        linear-gradient(#000 0 0) content-box;
+      filter: drop-shadow(0 1px 1.5px rgba(20, 20, 26, .28));
+      transform: rotate(5deg);
+    }
+    .timbre span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background: var(--blue-600);
+      color: var(--white);
+      font-family: var(--font-display);
+      line-height: .9;
+      font-size: 15px;
+      letter-spacing: .02em;
+    }
+    .timbre span b { font-weight: 400; color: var(--pink-600); }
+    .timbre span small { font-family: var(--font-body); font-weight: 700; font-size: 7px; letter-spacing: .1em; margin-top: 3px; }
+    .carte[data-voie="1"] .timbre span { background: var(--ink-900); }
+    .carte[data-voie="3"] .timbre span { background: var(--pink-600); }
+    .carte[data-voie="3"] .timbre span b { color: var(--blue-600); }
+
+    /* Tampon de la poste */
+    .tampon {
+      position: absolute;
+      top: -18px;
+      right: 18px;
+      width: 58px;
+      height: 58px;
+      color: var(--ink-900);
+      opacity: .55;
+      transform: rotate(-14deg);
+      pointer-events: none;
+    }
+
+    /* Légende manuscrite au bas de la carte */
+    .legende {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-500);
+    }
+    .legende span:last-child { color: var(--pink-700); }
+
+    /* État vide */
+    .vide {
+      margin: 32px 0 48px;
+      padding: 40px 24px;
+      border: 2px dashed var(--ink-300);
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+    .vide h2 {
+      margin: 0 0 6px;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 32px;
+      text-transform: uppercase;
+      color: var(--ink-900);
+    }
+    .vide p { margin: 0; color: var(--ink-500); }
+
+    /* Album Midjourney */
+    .album {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 16px 32px;
+      margin: 8px 0 56px;
+      padding: 28px 32px;
+      border-radius: var(--radius-lg);
+      background: var(--pink-50);
+    }
+    .album h2 {
+      margin: 0 0 4px;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(26px, 2.8vw, 36px);
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--ink-900);
+    }
+    .album p { margin: 0; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      background: var(--blue-600);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 18px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out);
+    }
+    .btn:hover { background: var(--pink-600); color: var(--ink-900); }
+    .btn:active { transform: scale(.97); }
+    .btn:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--blue-50); }
+    .btn[aria-disabled="true"] {
+      background: var(--white);
+      color: var(--ink-500);
+      border: 2px dashed var(--ink-300);
+      pointer-events: none;
+    }
+
+    footer { border-top: 2px solid var(--ink-900); }
+    footer .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px 24px;
+      padding-top: 14px;
+      padding-bottom: 20px;
+      font-size: 14px;
+      color: var(--ink-500);
+    }
+    footer a { color: inherit; }
+
+    /* Visionneuse */
+    dialog {
+      width: min(1100px, 100vw - 32px);
+      max-height: calc(100vh - 32px);
+      padding: 0;
+      border: 0;
+      background: transparent;
+      overflow: visible;
+    }
+    dialog::backdrop { background: rgba(255, 255, 255, .94); }
+    .vue {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .vue figure {
+      margin: 0;
+      padding: 14px 14px 18px;
+      background: var(--white);
+      border: 1px solid var(--ink-200);
+      border-radius: 4px;
+      box-shadow: var(--shadow-lg);
+    }
+    .vue img {
+      display: block;
+      max-width: 100%;
+      max-height: calc(100vh - 160px);
+      width: auto;
+      height: auto;
+    }
+    .vue-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .rond {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      height: 48px;
+      padding: 0 18px;
+      border: 2px solid var(--ink-900);
+      border-radius: var(--radius-pill);
+      background: var(--white);
+      color: var(--ink-900);
+      font: 600 15px/1 var(--font-body);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out), border-color 220ms var(--ease-out);
+    }
+    .rond:hover { border-color: var(--pink-600); color: var(--pink-700); }
+    .rond:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--blue-50); border-color: var(--blue-600); }
+    .rond.primaire { background: var(--blue-600); border-color: var(--blue-600); color: var(--white); }
+    .rond.primaire:hover { background: var(--pink-600); border-color: var(--pink-600); color: var(--ink-900); }
+    .vue-pos { font-size: 14px; font-weight: 600; color: var(--ink-500); align-self: center; padding: 0 6px; }
+
+    @media (max-width: 640px) {
+      .mur { columns: 2 140px; column-gap: 16px; }
+      .carte { padding: 8px 8px 26px; margin-bottom: 22px; }
+      .timbre { width: 36px; height: 44px; padding: 4px; top: -10px; right: -8px; }
+      .timbre span { font-size: 11px; }
+      .timbre span small { display: none; }
+      .tampon { width: 42px; height: 42px; top: -13px; right: 12px; }
+      .legende { font-size: 10px; left: 10px; right: 10px; bottom: 6px; }
+      .legende span:last-child { display: none; }
+      .album { grid-template-columns: 1fr; padding: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .carte, .btn, .rond, .filters button { transition: none; }
+      .carte, .carte:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a href="../"><img class="logo" src="../assets/logo-iagora.png" alt="IAgora, retour à l'accueil"></a>
+      <a class="back" href="../">← Retour à l'atelier</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <p class="eyebrow">IAgora Paris · Samedi 10 octobre 2026</p>
+      <h1>La galerie des cartes</h1>
+      <p class="lead">Toutes les cartes postales imaginées, créées et imprimées par les participantes et participants de l'atelier Cartes Post-IA-les. Clique sur une carte pour la voir en grand.</p>
+    </section>
+
+    <div class="toolbar" id="toolbar" hidden>
+      <div class="filters" role="group" aria-label="Filtrer par voie">
+        <button type="button" data-filtre="tout" aria-pressed="true">Toutes</button>
+        <button type="button" data-filtre="1" aria-pressed="false">Voie 1 · Ordinosaure</button>
+        <button type="button" data-filtre="2" aria-pressed="false">Voie 2 · IA frugale</button>
+        <button type="button" data-filtre="3" aria-pressed="false">Voie 3 · IA Rolls-Royce</button>
+      </div>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+
+    <div class="mur" id="mur"></div>
+
+    <div class="vide" id="vide" hidden>
+      <h2>Les cartes arrivent bientôt</h2>
+      <p>On numérise les tirages de l'atelier : reviens dans quelques jours.</p>
+    </div>
+
+    <section class="album" aria-labelledby="album-titre">
+      <div>
+        <h2 id="album-titre">Toutes les images Midjourney</h2>
+        <p>Les images créées sur la voie 3, y compris celles qui n'ont pas été imprimées.</p>
+      </div>
+      <a class="btn" id="album-lien" href="#" target="_blank" rel="noopener">Voir l'album ➭</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Atelier Cartes Post-IA-les · <a href="../">Retour à l'accueil</a></span>
+      <span>L'IA par tous et pour tous / <a href="https://iagora.fr/">iagora.fr</a></span>
+    </div>
+  </footer>
+
+  <dialog id="visionneuse" aria-label="Carte en grand">
+    <div class="vue">
+      <figure><img id="vue-img" alt=""></figure>
+      <div class="vue-actions">
+        <button class="rond" type="button" id="vue-prec" aria-label="Carte précédente">←</button>
+        <span class="vue-pos" id="vue-pos"></span>
+        <button class="rond" type="button" id="vue-suiv" aria-label="Carte suivante">→</button>
+        <a class="rond primaire" id="vue-dl" download>Télécharger</a>
+        <button class="rond" type="button" id="vue-fermer">Fermer ✕</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="cartes.js"></script>
+  <script>
+    // Lien vers l'album Google Photos des images Midjourney : à renseigner.
+    const ALBUM_GOOGLE_PHOTOS = "";
+
+    const NOMS_VOIES = { 1: "Ordinosaure", 2: "IA frugale", 3: "IA Rolls-Royce" };
+    const cartes = Array.isArray(window.CARTES) ? window.CARTES : [];
+    const mur = document.getElementById("mur");
+    const tampon = id => `<svg class="tampon" viewBox="0 0 60 60" aria-hidden="true" fill="none" stroke="currentColor">
+        <circle cx="30" cy="30" r="27" stroke-width="1.6"/><circle cx="30" cy="30" r="20" stroke-width="1"/>
+        <path id="${id}" d="M30 30 m-23.5 0 a23.5 23.5 0 1 1 47 0 a23.5 23.5 0 1 1 -47 0" stroke="none"/>
+        <text font-family="Heebo, Arial, sans-serif" font-size="6.2" font-weight="700" letter-spacing="1.4" fill="currentColor" stroke="none"><textPath href="#${id}">IAGORA · PARIS · IAGORA · PARIS ·</textPath></text>
+        <text x="30" y="28" text-anchor="middle" font-family="Anton, Arial, sans-serif" font-size="9" fill="currentColor" stroke="none">10.10</text>
+        <text x="30" y="38" text-anchor="middle" font-family="Anton, Arial, sans-serif" font-size="9" fill="currentColor" stroke="none">2026</text>
+      </svg>`;
+
+    // Mur de cartes
+    cartes.forEach((c, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "carte";
+      b.dataset.index = i;
+      if (c.voie) b.dataset.voie = c.voie;
+      const voie = c.voie ? `Voie ${c.voie} · ${NOMS_VOIES[c.voie]}` : "";
+      b.setAttribute("aria-label", `Carte n° ${i + 1}${voie ? ", " + voie : ""} : voir en grand`);
+      b.innerHTML = `
+        <img src="${c.mini}" width="${c.w}" height="${c.h}" loading="lazy" decoding="async" alt="">
+        ${tampon("arc" + i)}
+        <span class="timbre" aria-hidden="true"><span><b>IA</b>GORA<small>10.10.26</small></span></span>
+        <span class="legende"><span>N° ${String(i + 1).padStart(2, "0")}</span><span>${voie}</span></span>`;
+      b.addEventListener("click", () => ouvrir(i));
+      mur.appendChild(b);
+    });
+
+    // Filtres : affichés seulement si des cartes portent une voie
+    const toolbar = document.getElementById("toolbar");
+    const count = document.getElementById("count");
+    const majCompte = () => {
+      const n = mur.querySelectorAll(".carte:not([hidden])").length;
+      count.textContent = n + (n > 1 ? " cartes" : " carte");
+    };
+    if (cartes.length) {
+      toolbar.hidden = false;
+      const voies = new Set(cartes.map(c => c.voie).filter(Boolean));
+      const filtres = toolbar.querySelectorAll(".filters button");
+      filtres.forEach(btn => {
+        if (btn.dataset.filtre !== "tout" && !voies.has(+btn.dataset.filtre)) btn.hidden = true;
+        btn.addEventListener("click", () => {
+          filtres.forEach(f => f.setAttribute("aria-pressed", f === btn));
+          mur.querySelectorAll(".carte").forEach(el => {
+            el.hidden = btn.dataset.filtre !== "tout" && el.dataset.voie !== btn.dataset.filtre;
+          });
+          majCompte();
+        });
+      });
+      if (!voies.size) toolbar.querySelector(".filters").hidden = true;
+      majCompte();
+    } else {
+      document.getElementById("vide").hidden = false;
+    }
+
+    // Album Google Photos
+    const album = document.getElementById("album-lien");
+    if (ALBUM_GOOGLE_PHOTOS) {
+      album.href = ALBUM_GOOGLE_PHOTOS;
+    } else {
+      album.textContent = "Album bientôt en ligne";
+      album.setAttribute("aria-disabled", "true");
+      album.removeAttribute("href");
+    }
+
+    // Visionneuse
+    const dlg = document.getElementById("visionneuse");
+    const img = document.getElementById("vue-img");
+    const pos = document.getElementById("vue-pos");
+    const dl = document.getElementById("vue-dl");
+    let courant = 0;
+    const visibles = () => [...mur.querySelectorAll(".carte:not([hidden])")].map(el => +el.dataset.index);
+    function afficher(i) {
+      courant = i;
+      const c = cartes[i];
+      img.src = c.src;
+      img.alt = `Carte n° ${i + 1}` + (c.voie ? `, voie ${c.voie} · ${NOMS_VOIES[c.voie]}` : "");
+      dl.href = c.src;
+      const liste = visibles();
+      pos.textContent = `${liste.indexOf(i) + 1} / ${liste.length}`;
+    }
+    function ouvrir(i) { afficher(i); dlg.showModal(); }
+    function decaler(d) {
+      const liste = visibles();
+      const k = (liste.indexOf(courant) + d + liste.length) % liste.length;
+      afficher(liste[k]);
+    }
+    document.getElementById("vue-prec").addEventListener("click", () => decaler(-1));
+    document.getElementById("vue-suiv").addEventListener("click", () => decaler(1));
+    document.getElementById("vue-fermer").addEventListener("click", () => dlg.close());
+    dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("keydown", e => {
+      if (e.key === "ArrowLeft") decaler(-1);
+      if (e.key === "ArrowRight") decaler(1);
+    });
+    dlg.addEventListener("close", () => {
+      const el = mur.querySelector(`.carte[data-index="${courant}"]`);
+      if (el) el.focus();
+    });
+  </script>
+</body>
+</html>

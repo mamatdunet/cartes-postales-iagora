@@ -63,13 +63,37 @@
       gap: 16px;
     }
     .logo { height: 26px; width: auto; display: block; }
-    .tag {
-      font-size: 12px;
+    /* Annonce de la galerie */
+    .annonce {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 6px 6px 6px 18px;
+      border-radius: var(--radius-pill);
+      background: var(--pink-50);
+      color: var(--ink-900);
+      font-size: 15px;
       font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--ink-500);
+      line-height: 1.3;
+      text-decoration: none;
     }
+    .annonce strong { color: var(--pink-700); font-weight: 700; }
+    .annonce .btn-annonce {
+      flex-shrink: 0;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--blue-600);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out);
+    }
+    .annonce:hover .btn-annonce { background: var(--pink-600); color: var(--ink-900); }
+    .annonce:active .btn-annonce { transform: scale(.97); }
+    .annonce:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--blue-50), 0 0 0 6px var(--blue-600); }
 
     main {
       flex: 1;
@@ -269,7 +293,8 @@
       .voie h2 { margin-top: 4px; }
       .num b { font-size: 40px; top: 14px; right: 20px; }
       .choose { margin-top: 24px; }
-      .tag { display: none; }
+      header .wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .annonce { width: 100%; justify-content: space-between; border-radius: var(--radius-lg); padding: 10px 10px 10px 16px; font-size: 14px; }
     }
 
     @media (max-width: 860px) and (min-width: 560px) {
@@ -304,7 +329,10 @@
   <header>
     <div class="wrap">
       <a href="https://iagora.fr/" aria-label="IAgora"><img class="logo" src="assets/logo-iagora.png" alt="IAgora"></a>
-      <span class="tag">Focus démo · En continu · Tout public</span>
+      <a class="annonce" href="galerie/">
+        <span>Revoir toutes les cartes créées à <strong>IAgora Paris</strong> le samedi 10&nbsp;octobre dernier</span>
+        <span class="btn-annonce">Voir la galerie ➭</span>
+      </a>
     </div>
   </header>
 
