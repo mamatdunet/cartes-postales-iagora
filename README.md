@@ -42,7 +42,7 @@ Les cartes sans description s'affichent sans ce bouton.
 
 ## Album Google Photos (images Midjourney)
 
-Renseigner le lien dans `galerie/index.html`, constante `ALBUM_GOOGLE_PHOTOS`.
+Lien de l'album : constante `ALBUM_GOOGLE_PHOTOS` dans `galerie/index.html`
 Tant qu'elle est vide, le bouton affiche « Album bientôt en ligne ».
 
 ## Aperçu en local

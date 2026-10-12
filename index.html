@@ -294,21 +294,43 @@
     .tip {
       position: relative;
       z-index: 1;
-      display: block;
-      margin-top: 12px;
-      padding: 8px 12px;
-      border: 2px solid var(--pink-600);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 14px;
+      padding: 10px 12px 10px 14px;
+      border: 2px solid var(--ink-900);
       border-radius: var(--radius-md);
-      background: var(--pink-50);
+      background: var(--white);
       color: var(--ink-900);
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.35;
       text-decoration: none;
+      transition: background-color 220ms var(--ease-out), border-color 220ms var(--ease-out);
+    }
+    .tip-texte { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+    .tip-surtitre {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--pink-700);
+    }
+    .tip-titre { font-size: 15px; font-weight: 700; line-height: 1.3; }
+    .tip-fleche {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      margin-left: auto;
+      border-radius: var(--radius-pill);
+      background: var(--pink-600);
+      color: var(--ink-900);
+      font-size: 15px;
       transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out);
     }
-    .tip:hover { background: var(--pink-600); }
-    .tip:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--pink-100); }
+    .tip:hover { background: var(--pink-50); border-color: var(--pink-600); }
+    .tip:hover .tip-fleche { background: var(--blue-600); color: var(--white); }
+    .tip:focus-visible { outline: none; border-color: var(--blue-600); box-shadow: 0 0 0 4px var(--blue-50); }
     .url {
       display: block;
       margin-top: 10px;
@@ -451,7 +473,13 @@
             <a class="cta" href="https://www.midjourney.com/imagine" target="_blank" rel="noopener">C'est parti ➭</a>
             <span class="url">midjourney.com/imagine</span>
           </div>
-          <a class="tip" href="https://iagora-composer-image.vercel.app/" target="_blank" rel="noopener">★ Quelques idées pour composer son image</a>
+          <a class="tip" href="https://iagora-composer-image.vercel.app/" target="_blank" rel="noopener">
+            <span class="tip-texte">
+              <span class="tip-surtitre">Besoin d'inspiration ?</span>
+              <span class="tip-titre">Quelques idées pour composer son&nbsp;image</span>
+            </span>
+            <span class="tip-fleche" aria-hidden="true">➭</span>
+          </a>
         </div>
       </div>
     </div>
