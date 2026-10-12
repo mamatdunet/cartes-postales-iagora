@@ -7,9 +7,15 @@ Site statique de l'atelier :
 
 ## Ajouter les cartes à la galerie
 
-1. Déposer les scans ou photos des cartes (jpg, png ou webp) dans `galerie/cartes/`.
-   Pour indiquer la voie, préfixer le nom du fichier par `v1-`, `v2-` ou `v3-`
-   (ex. `v2-chat-pixel.jpg`). Sans préfixe, la carte s'affiche sans voie.
+1. Déposer les scans ou photos des cartes (jpg, png ou webp) dans le sous-dossier de leur voie :
+
+   ```
+   galerie/cartes/voie-1/   Ordinosaure
+   galerie/cartes/voie-2/   IA frugale
+   galerie/cartes/voie-3/   IA Rolls-Royce
+   ```
+
+   Une image posée directement dans `galerie/cartes/` s'affiche sans voie.
 2. Lancer le script (Python 3 et Pillow : `pip install Pillow`) :
 
    ```

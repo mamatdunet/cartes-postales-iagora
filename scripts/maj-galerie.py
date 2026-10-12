@@ -3,8 +3,9 @@
 
 Usage : python3 scripts/maj-galerie.py
 
-1. Déposer les images (jpg, png, webp) dans galerie/cartes/
-   Préfixe facultatif pour indiquer la voie : v1-…, v2-…, v3-… (ex. v2-chat-pixel.jpg)
+1. Déposer les images (jpg, png, webp) dans le sous-dossier de leur voie :
+   galerie/cartes/voie-1/, galerie/cartes/voie-2/, galerie/cartes/voie-3/
+   (une image posée directement dans galerie/cartes/ s'affiche sans voie)
 2. Lancer ce script : il crée les miniatures dans galerie/cartes/mini/
    et réécrit galerie/cartes.js (la liste lue par la page).
 
@@ -33,29 +34,34 @@ def main():
     DOSSIER.mkdir(parents=True, exist_ok=True)
     MINI.mkdir(exist_ok=True)
     cartes = []
-    images = sorted((p for p in DOSSIER.iterdir() if p.suffix.lower() in EXTENSIONS), key=cle_tri)
-    for chemin in images:
-        with Image.open(chemin) as im:
-            im = ImageOps.exif_transpose(im)
-            largeur, hauteur = im.size
-            mini = MINI / (chemin.stem + ".webp")
-            if not mini.exists() or mini.stat().st_mtime < chemin.stat().st_mtime:
-                copie = im.convert("RGB")
-                copie.thumbnail((TAILLE_MINI, TAILLE_MINI))
-                copie.save(mini, "WEBP", quality=82)
-        voie = re.match(r"v([123])[-_]", chemin.name, re.I)
-        cartes.append({
-            "src": f"cartes/{chemin.name}",
-            "mini": f"cartes/mini/{mini.name}",
-            "w": largeur,
-            "h": hauteur,
-            "voie": int(voie.group(1)) if voie else None,
-        })
+    # (dossier, voie) : d'abord les trois voies, puis les images sans voie
+    sources = [(DOSSIER / f"voie-{v}", v) for v in (1, 2, 3)] + [(DOSSIER, None)]
+    for dossier, voie in sources:
+        dossier.mkdir(exist_ok=True)
+        images = sorted((p for p in dossier.iterdir() if p.suffix.lower() in EXTENSIONS), key=cle_tri)
+        for chemin in images:
+            relatif = chemin.relative_to(DOSSIER)
+            mini = MINI / relatif.with_suffix(".webp")
+            mini.parent.mkdir(parents=True, exist_ok=True)
+            with Image.open(chemin) as im:
+                im = ImageOps.exif_transpose(im)
+                largeur, hauteur = im.size
+                if not mini.exists() or mini.stat().st_mtime < chemin.stat().st_mtime:
+                    copie = im.convert("RGB")
+                    copie.thumbnail((TAILLE_MINI, TAILLE_MINI))
+                    copie.save(mini, "WEBP", quality=82)
+            cartes.append({
+                "src": f"cartes/{relatif.as_posix()}",
+                "mini": f"cartes/mini/{mini.relative_to(MINI).as_posix()}",
+                "w": largeur,
+                "h": hauteur,
+                "voie": voie,
+            })
 
     # Supprime les miniatures orphelines
-    noms = {Path(c["mini"]).name for c in cartes}
-    for m in MINI.glob("*.webp"):
-        if m.name not in noms:
+    gardees = {MINI / Path(c["mini"]).relative_to("cartes/mini") for c in cartes}
+    for m in MINI.rglob("*.webp"):
+        if m not in gardees:
             m.unlink()
 
     SORTIE.write_text(
