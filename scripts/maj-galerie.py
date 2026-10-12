@@ -15,6 +15,7 @@ dans la visionneuse de la galerie.
 
 Nécessite Pillow (pip install Pillow).
 """
+import hashlib
 import html
 import json
 import re
@@ -49,7 +50,8 @@ def lire_description(im):
     # PNG : blocs texte (Midjourney écrit « Description »)
     for cle, valeur in (getattr(im, "text", None) or {}).items():
         if cle.lower() in ("description", "comment", "parameters", "prompt") and isinstance(valeur, str):
-            candidats.append(valeur)
+            # Midjourney écrit de l'UTF-8 là où Pillow lit du Latin-1
+            candidats.append(reparer_texte(valeur))
     # EXIF ImageDescription (0x010E)
     valeur = im.getexif().get(0x010E)
     if isinstance(valeur, bytes):
@@ -85,6 +87,8 @@ def main():
     DOSSIER.mkdir(parents=True, exist_ok=True)
     MINI.mkdir(exist_ok=True)
     cartes = []
+    deja_vues = {}  # empreinte du fichier -> premier nom rencontré
+    doublons = []
     # (dossier, voie) : d'abord les trois voies, puis les images sans voie
     sources = [(DOSSIER / f"voie-{v}", v) for v in (1, 2, 3)] + [(DOSSIER, None)]
     for dossier, voie in sources:
@@ -92,6 +96,12 @@ def main():
         images = sorted((p for p in dossier.iterdir() if p.suffix.lower() in EXTENSIONS), key=cle_tri)
         for chemin in images:
             relatif = chemin.relative_to(DOSSIER)
+            # Copie identique d'une image déjà vue (« photo (1).png ») : ignorée
+            empreinte = hashlib.sha256(chemin.read_bytes()).hexdigest()
+            if empreinte in deja_vues:
+                doublons.append((relatif, deja_vues[empreinte]))
+                continue
+            deja_vues[empreinte] = relatif
             mini = MINI / relatif.with_suffix(".webp")
             mini.parent.mkdir(parents=True, exist_ok=True)
             with Image.open(chemin) as im:
@@ -122,6 +132,13 @@ def main():
         "window.CARTES = " + json.dumps(cartes, ensure_ascii=False, indent=1) + ";\n",
         encoding="utf-8",
     )
+    for relatif, original in doublons:
+        print(f"Doublon ignoré : {relatif} (identique à {original.name})")
+    ignores = sorted(p.relative_to(DOSSIER) for p in DOSSIER.rglob("*")
+                     if p.is_file() and MINI not in p.parents
+                     and p.suffix.lower() not in EXTENSIONS and not p.name.startswith("."))
+    for relatif in ignores:
+        print(f"Fichier ignoré (pas une image) : {relatif}")
     avec_prompt = sum(1 for c in cartes if c["prompt"])
     print(f"{len(cartes)} carte(s) dans la galerie, dont {avec_prompt} avec un prompt.")
 

@@ -1,6 +1,22 @@
 // Fichier généré par scripts/maj-galerie.py : ne pas modifier à la main.
 window.CARTES = [
  {
+  "src": "cartes/voie-2/chats-pixel.png",
+  "mini": "cartes/mini/voie-2/chats-pixel.webp",
+  "w": 1772,
+  "h": 1181,
+  "voie": 2,
+  "prompt": null
+ },
+ {
+  "src": "cartes/voie-2/fiat-lux-symboles.png",
+  "mini": "cartes/mini/voie-2/fiat-lux-symboles.webp",
+  "w": 1772,
+  "h": 1181,
+  "voie": 2,
+  "prompt": null
+ },
+ {
   "src": "cartes/voie-3/amuseurs01_a_chicken_performing_karate_against_a_cow_doing_ci_d479b2c3-d6ba-40a3-a544-fc7b8150861f_0.png",
   "mini": "cartes/mini/voie-3/amuseurs01_a_chicken_performing_karate_against_a_cow_doing_ci_d479b2c3-d6ba-40a3-a544-fc7b8150861f_0.webp",
   "w": 1344,
@@ -14,7 +30,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "a grand wizard riding on the back of a phoenix, in the background a medieval castle at the edge of the forest, photorealistic, highly detailed, like a real photograph, full shot capturing the character head-to-toe, front view, camera at subjectâs eye level, warm color palette: oranges, reds, golden yellows, sunrise or sunset with golden, low-angle light --ar 3:2 --v 8.2"
+  "prompt": "a grand wizard riding on the back of a phoenix, in the background a medieval castle at the edge of the forest, photorealistic, highly detailed, like a real photograph, full shot capturing the character head-to-toe, front view, camera at subject’s eye level, warm color palette: oranges, reds, golden yellows, sunrise or sunset with golden, low-angle light --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_add_a_murakami_style_flower_and_a_cat_both_are_not_024fa17f-0d75-4f1a-8417-59eb28e80c1c_1.png",
@@ -38,23 +54,7 @@ window.CARTES = [
   "w": 1456,
   "h": 816,
   "voie": 3,
-  "prompt": "ajoute intelligence,jet privÃ©e richesse argent --ar 91:51 --edit https://s.mj.run/o7T9QLkxRfI https://s.mj.run/ytCBROhid2c --v 8.2"
- },
- {
-  "src": "cartes/voie-3/amuseurs01_ajoute_intelligencejet_prive_richesse_argent_--ar__c8c02a16-c91a-4c71-adb2-84131368ec1d_0 (2).png",
-  "mini": "cartes/mini/voie-3/amuseurs01_ajoute_intelligencejet_prive_richesse_argent_--ar__c8c02a16-c91a-4c71-adb2-84131368ec1d_0 (2).webp",
-  "w": 1456,
-  "h": 816,
-  "voie": 3,
-  "prompt": "ajoute intelligence,jet privÃ©e richesse argent --ar 91:51 --edit https://s.mj.run/o7T9QLkxRfI https://s.mj.run/ytCBROhid2c --v 8.2"
- },
- {
-  "src": "cartes/voie-3/amuseurs01_ajoute_intelligencejet_prive_richesse_argent_--ar__c8c02a16-c91a-4c71-adb2-84131368ec1d_0.png",
-  "mini": "cartes/mini/voie-3/amuseurs01_ajoute_intelligencejet_prive_richesse_argent_--ar__c8c02a16-c91a-4c71-adb2-84131368ec1d_0.webp",
-  "w": 1456,
-  "h": 816,
-  "voie": 3,
-  "prompt": "ajoute intelligence,jet privÃ©e richesse argent --ar 91:51 --edit https://s.mj.run/o7T9QLkxRfI https://s.mj.run/ytCBROhid2c --v 8.2"
+  "prompt": "ajoute intelligence,jet privée richesse argent --ar 91:51 --edit https://s.mj.run/o7T9QLkxRfI https://s.mj.run/ytCBROhid2c --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_ajoute_Nessy_aprs_Dear_--chaos_35_--ar_7758_--edit_1b2fb169-d7e7-4665-9136-c459ea9eaa08_1.png",
@@ -62,7 +62,7 @@ window.CARTES = [
   "w": 1232,
   "h": 928,
   "voie": 3,
-  "prompt": "ajoute Nessy aprÃ¨s Dear --chaos 35 --ar 77:58 --edit https://s.mj.run/PC6-IucVmn4 --stylize 200 --weird 190 --v 8.2"
+  "prompt": "ajoute Nessy après Dear --chaos 35 --ar 77:58 --edit https://s.mj.run/PC6-IucVmn4 --stylize 200 --weird 190 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Au_premier_plan_5_personnes_ensemble_photo_de_fami_4dabc0e1-b6dd-471b-966a-c41ebe2f33c2_3.png",
@@ -70,7 +70,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Au premier plan, 5 personnes ensemble (photo de famille): un homme grand (des cheveux marrons gris et des yeux marrons), 2 femmes (une rousse avec de long cheveux et les yeux bleus verts et des taches de rousseur, une brune un peu plus petits avec des lunettes et des yeux bleus et des taches de rousseur), 2 filles (une blonde aux yeux bleus, une plus petite brune aux yeux marrons VERTS). Les personnes sont habillÃ©s avec des habits qui rappellent les couleurs et le corps est une carotte. En arriÃ¨re-plan une riviere avec un bateau rouge, de la brume, et un moulin jaune. Aquarelle, couleurs transparentes qui se diffusent sur un papier texturÃ©. Plan moyen (full shot) : les personnages dont en groupe cadrÃ© en pied, de la tÃªte aux pieds. Le sujet est placÃ© en bas de l'image : les 5 personnages sont au milieu de l'image, Ã  droite en arriÃ¨re plan, le moulin, Ã  gauche, le petit bateau aux voiles rouges qui flotte sur la riviere. PhotographiÃ© au grand-angle 20 mm, champ trÃ¨s large et perspectives accentuÃ©es. Vue de face, appareil Ã  hauteur du sujet. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. En plein midi, lumiÃ¨re vive du soleil au zÃ©nith, ombres courtes. --no une course a pied --ar 3:2 --v 8.2"
+  "prompt": "Au premier plan, 5 personnes ensemble (photo de famille): un homme grand (des cheveux marrons gris et des yeux marrons), 2 femmes (une rousse avec de long cheveux et les yeux bleus verts et des taches de rousseur, une brune un peu plus petits avec des lunettes et des yeux bleus et des taches de rousseur), 2 filles (une blonde aux yeux bleus, une plus petite brune aux yeux marrons VERTS). Les personnes sont habillés avec des habits qui rappellent les couleurs et le corps est une carotte. En arrière-plan une riviere avec un bateau rouge, de la brume, et un moulin jaune. Aquarelle, couleurs transparentes qui se diffusent sur un papier texturé. Plan moyen (full shot) : les personnages dont en groupe cadré en pied, de la tête aux pieds. Le sujet est placé en bas de l'image : les 5 personnages sont au milieu de l'image, à droite en arrière plan, le moulin, à gauche, le petit bateau aux voiles rouges qui flotte sur la riviere. Photographié au grand-angle 20 mm, champ très large et perspectives accentuées. Vue de face, appareil à hauteur du sujet. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. En plein midi, lumière vive du soleil au zénith, ombres courtes. --no une course a pied --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Au_premier_plan_five_nights_at_freddy_s._En_arrire_a436e7ab-1fc3-459d-b941-43f1c0b8c1c4_2.png",
@@ -78,7 +78,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Au premier plan, five nights at freddy s. En arriÃ¨re-plan, les copains de five nights at freddy s. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan d'ensemble (extreme wide shot) : le dÃ©cor occupe toute l'image, le sujet est tout petit dans la pizzeria. Le sujet est au centre de l'image, composition symÃ©trique. PhotographiÃ© avec un objectif 50 mm, perspective naturelle. Vue de face, appareil Ã  hauteur du sujet. Format paysage 4:3. Palette de couleurs chaudes : couleur original. En pleine nuit, vers minuit, sous la lumiÃ¨re de la lune. --ar 3:2 --v 8.2"
+  "prompt": "Au premier plan, five nights at freddy s. En arrière-plan, les copains de five nights at freddy s. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan d'ensemble (extreme wide shot) : le décor occupe toute l'image, le sujet est tout petit dans la pizzeria. Le sujet est au centre de l'image, composition symétrique. Photographié avec un objectif 50 mm, perspective naturelle. Vue de face, appareil à hauteur du sujet. Format paysage 4:3. Palette de couleurs chaudes : couleur original. En pleine nuit, vers minuit, sous la lumière de la lune. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Au_premier_plan_frodon._En_arrire-plan_le_gouffre__380cc0df-cdde-4dd4-9607-b13026582ee8_0.png",
@@ -86,7 +86,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Au premier plan, [frodon]. En arriÃ¨re-plan, [le gouffre de helm]. Dans le style surrÃ©aliste de Salvador DalÃ­. Plan gÃ©nÃ©ral (wide shot) : on voit toute la scÃ¨ne et ses personnages en entier. Le sujet est au centre de l'image, composition symÃ©trique. Vue en plongÃ©e depuis un drone, vue aÃ©rienne du dessus. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. En pleine nuit, vers minuit, sous la lumiÃ¨re de la lune. --ar 3:2 --v 8.2"
+  "prompt": "Au premier plan, [frodon]. En arrière-plan, [le gouffre de helm]. Dans le style surréaliste de Salvador Dalí. Plan général (wide shot) : on voit toute la scène et ses personnages en entier. Le sujet est au centre de l'image, composition symétrique. Vue en plongée depuis un drone, vue aérienne du dessus. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. En pleine nuit, vers minuit, sous la lumière de la lune. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Au_premier_plan_un_chasseur_ou_rodeur_de_jeux_de_r_1cc56096-fa90-41b4-89a3-9b2065afc7de_0.png",
@@ -94,7 +94,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Au premier plan, un chasseur ou rodeur de jeux de rÃ´les accompagner de son loup. En arriÃ¨re-plan, une forÃªt. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan gÃ©nÃ©ral (wide shot) : on voit toute la scÃ¨ne et ses personnages en entier. Le sujet est placÃ© en bas de l'image. PhotographiÃ© avec un objectif 50 mm, perspective naturelle. Vue de face, appareil Ã  hauteur du sujet. Format paysage 16:9, comme un Ã©cran de tÃ©lÃ©vision. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. Au lever ou au coucher du soleil, lumiÃ¨re dorÃ©e et rasante. --ar 3:2 --v 8.2"
+  "prompt": "Au premier plan, un chasseur ou rodeur de jeux de rôles accompagner de son loup. En arrière-plan, une forêt. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan général (wide shot) : on voit toute la scène et ses personnages en entier. Le sujet est placé en bas de l'image. Photographié avec un objectif 50 mm, perspective naturelle. Vue de face, appareil à hauteur du sujet. Format paysage 16:9, comme un écran de télévision. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. Au lever ou au coucher du soleil, lumière dorée et rasante. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Au_premier_plan_un_chat._En_arrire-plan_un_paysage_fbd36252-7176-40fc-9cce-72cf48803940_3.png",
@@ -102,7 +102,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Au premier plan, un chat. En arriÃ¨re-plan, un paysage. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan moyen (full shot) : le personnage cadrÃ© en pied, de la tÃªte aux pieds. Le sujet est au centre de l'image, composition symÃ©trique. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. Au lever ou au coucher du soleil, lumiÃ¨re dorÃ©e et rasante. --ar 3:2 --v 8.2"
+  "prompt": "Au premier plan, un chat. En arrière-plan, un paysage. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan moyen (full shot) : le personnage cadré en pied, de la tête aux pieds. Le sujet est au centre de l'image, composition symétrique. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. Au lever ou au coucher du soleil, lumière dorée et rasante. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Au_premier_plan_un_chat_tachet_noir_et_blanc_allon_77bc61d2-bd8e-4b0e-92ea-b77450681ac2_0.png",
@@ -110,7 +110,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Au premier plan, un chat tachetÃ© noir et blanc allongÃ© par terre. En arriÃ¨re-plan, un canapÃ© rose avec un plaid gris. Dans le style de Niki de Saint Phalle, formes rondes et couleurs vives. Plan moyen (full shot) : le personnage cadrÃ© en pied, de la tÃªte aux pieds. Le sujet est placÃ© en bas de l'image. Objectif fish-eye, image trÃ¨s bombÃ©e, les lignes droites se courbent. Vue de face, appareil Ã  hauteur du sujet. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. Au lever ou au coucher du soleil, lumiÃ¨re dorÃ©e et rasante. --ar 3:2 --v 8.2"
+  "prompt": "Au premier plan, un chat tacheté noir et blanc allongé par terre. En arrière-plan, un canapé rose avec un plaid gris. Dans le style de Niki de Saint Phalle, formes rondes et couleurs vives. Plan moyen (full shot) : le personnage cadré en pied, de la tête aux pieds. Le sujet est placé en bas de l'image. Objectif fish-eye, image très bombée, les lignes droites se courbent. Vue de face, appareil à hauteur du sujet. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. Au lever ou au coucher du soleil, lumière dorée et rasante. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Au_premier_plan_un_tamarin_empereur_coiff_dun_chap_8ffe9f94-fec1-4f1a-96f8-90d5aeff31a5_3.png",
@@ -118,7 +118,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Au premier plan, un tamarin empereur coiffÃ© d'un chapeau haut de forme qui Ã©crit un poÃ¨me accrochÃ© Ã  une roseau. ArriÃ¨re-plan flou avec un joli bokeh, faible profondeur de champ. Peinture Ã  l'huile sur toile, touches de pinceau visibles. Le sujet est placÃ© en haut de l'image. Format paysage 6:5, presque carrÃ©. pano froid. En pleine nuit, vers minuit, sous la lumiÃ¨re de la lune. --ar 3:2 --v 8.2"
+  "prompt": "Au premier plan, un tamarin empereur coiffé d'un chapeau haut de forme qui écrit un poème accroché à une roseau. Arrière-plan flou avec un joli bokeh, faible profondeur de champ. Peinture à l'huile sur toile, touches de pinceau visibles. Le sujet est placé en haut de l'image. Format paysage 6:5, presque carré. pano froid. En pleine nuit, vers minuit, sous la lumière de la lune. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Au_premier_plan_une_ado_de_15_ans_tenue_par_des_fi_442b4e19-a899-4aee-b35e-fc1aa8fc78c8_1.png",
@@ -126,7 +126,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Au premier plan, une ado de 15 ans, tenue par des fils au niveau des mains, pieds et la tÃªte. ArriÃ¨re-plan dans une ville avec des bÃ¢timents d'habitation et de commerces. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan moyen (full shot) : le personnage cadrÃ© en pied, de la tÃªte aux pieds. Le sujet est au centre de l'image, composition symÃ©trique. --ar 3:2 --v 8.2"
+  "prompt": "Au premier plan, une ado de 15 ans, tenue par des fils au niveau des mains, pieds et la tête. Arrière-plan dans une ville avec des bâtiments d'habitation et de commerces. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan moyen (full shot) : le personnage cadré en pied, de la tête aux pieds. Le sujet est au centre de l'image, composition symétrique. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Au_premier_plan_une_formule_1_rouge_sur_une_route._59058ba6-7742-4fb2-add6-d9f8a31b0ae8_0.png",
@@ -134,7 +134,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Au premier plan une formule 1 rouge sur une route. En arriÃ¨re-plan, un circuit. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. TrÃ¨s gros plan (extreme close-up) sur un dÃ©tail, [le volant. Le sujet est placÃ© sur le tiers gauche de l'image (rÃ¨gle des tiers). Objectif fish-eye, image trÃ¨s bombÃ©e, les lignes droites se courbent. Vue en plongÃ©e depuis un drone, vue aÃ©rienne du dessus. Format paysage 16:9, comme un Ã©cran de tÃ©lÃ©vision. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. En pleine nuit, vers minuit, sous la lumiÃ¨re de la lune. --ar 3:2 --v 8.2"
+  "prompt": "Au premier plan une formule 1 rouge sur une route. En arrière-plan, un circuit. Rendu photoréaliste, très détaillé, comme une vraie photographie. Très gros plan (extreme close-up) sur un détail, [le volant. Le sujet est placé sur le tiers gauche de l'image (règle des tiers). Objectif fish-eye, image très bombée, les lignes droites se courbent. Vue en plongée depuis un drone, vue aérienne du dessus. Format paysage 16:9, comme un écran de télévision. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. En pleine nuit, vers minuit, sous la lumière de la lune. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Bataille_navale_a_la_manire_de_Salvador_Dali_--ar__027990a6-63e7-4a1f-bf37-3d253d09cb4c_0.png",
@@ -142,7 +142,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Bataille navale a la maniÃ¨re de Salvador Dali --ar 3:2 --v 8.2"
+  "prompt": "Bataille navale a la manière de Salvador Dali --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Bonnie_de_FNAF_1_dans_cette_image_--ar_32_--edit_h_495c6909-354e-4fd8-a5d8-ec172a22f258_1.png",
@@ -155,14 +155,6 @@ window.CARTES = [
  {
   "src": "cartes/voie-3/amuseurs01_Bonnie_de_FNAF_1_dans_cette_image_--ar_32_--edit_h_495c6909-354e-4fd8-a5d8-ec172a22f258_2 (1).png",
   "mini": "cartes/mini/voie-3/amuseurs01_Bonnie_de_FNAF_1_dans_cette_image_--ar_32_--edit_h_495c6909-354e-4fd8-a5d8-ec172a22f258_2 (1).webp",
-  "w": 1344,
-  "h": 896,
-  "voie": 3,
-  "prompt": "Bonnie de FNAF 1 dans cette image --ar 3:2 --edit https://s.mj.run/rtxNzZ-H9Jk --v 8.2"
- },
- {
-  "src": "cartes/voie-3/amuseurs01_Bonnie_de_FNAF_1_dans_cette_image_--ar_32_--edit_h_495c6909-354e-4fd8-a5d8-ec172a22f258_2.png",
-  "mini": "cartes/mini/voie-3/amuseurs01_Bonnie_de_FNAF_1_dans_cette_image_--ar_32_--edit_h_495c6909-354e-4fd8-a5d8-ec172a22f258_2.webp",
   "w": 1344,
   "h": 896,
   "voie": 3,
@@ -182,7 +174,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "cauchemar danger imminent : Au premier plan, une marionnette de sexe fÃ©minin, tenue par des fils au niveau des mains, pieds et la tÃªte. ArriÃ¨re-plan dans une ville avec des bÃ¢timents d'habitation et de commerces. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan moyen (full shot) : le personnage cadrÃ© en pied, de la tÃªte aux pieds. Le sujet est au centre de l'image, composition symÃ©trique. PhotographiÃ© avec un objectif 50 mm, perspective naturelle. Vue de face, appareil Ã  hauteur du sujet. Format paysage 3:2, comme une photo classique. Palette de couleurs froides : bleus, verts et violets. En plein midi, lumiÃ¨re vive du soleil au zÃ©nith, ombres courtes. --ar 3:2 --v 8.2"
+  "prompt": "cauchemar danger imminent : Au premier plan, une marionnette de sexe féminin, tenue par des fils au niveau des mains, pieds et la tête. Arrière-plan dans une ville avec des bâtiments d'habitation et de commerces. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan moyen (full shot) : le personnage cadré en pied, de la tête aux pieds. Le sujet est au centre de l'image, composition symétrique. Photographié avec un objectif 50 mm, perspective naturelle. Vue de face, appareil à hauteur du sujet. Format paysage 3:2, comme une photo classique. Palette de couleurs froides : bleus, verts et violets. En plein midi, lumière vive du soleil au zénith, ombres courtes. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_de_la_neige_sur_les_montagne_un_temps_de_printent__10c84568-a06c-4cf4-b336-24b631f3eda3_0.png",
@@ -206,19 +198,11 @@ window.CARTES = [
   "w": 1232,
   "h": 928,
   "voie": 3,
-  "prompt": "en bas Ã  gauche de l'image, il y a un chat. Et ce chat Ã  une fleur rose que j'aimerais que tu supprime. Ne change rien dans l'image d'autres dans l'image --ar 77:58 --edit https://s.mj.run/irIknNrwI80 --v 8.2"
+  "prompt": "en bas à gauche de l'image, il y a un chat. Et ce chat à une fleur rose que j'aimerais que tu supprime. Ne change rien dans l'image d'autres dans l'image --ar 77:58 --edit https://s.mj.run/irIknNrwI80 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_en_maillot_et_on_voit_bien_l_horizon_--ar_32_--edi_a65de4f5-b899-488b-93c1-794bfe9cf764_3 (1).png",
   "mini": "cartes/mini/voie-3/amuseurs01_en_maillot_et_on_voit_bien_l_horizon_--ar_32_--edi_a65de4f5-b899-488b-93c1-794bfe9cf764_3 (1).webp",
-  "w": 1344,
-  "h": 896,
-  "voie": 3,
-  "prompt": "en maillot et on voit bien l horizon --ar 3:2 --edit https://s.mj.run/_f-onv02r5k --v 8.2"
- },
- {
-  "src": "cartes/voie-3/amuseurs01_en_maillot_et_on_voit_bien_l_horizon_--ar_32_--edi_a65de4f5-b899-488b-93c1-794bfe9cf764_3.png",
-  "mini": "cartes/mini/voie-3/amuseurs01_en_maillot_et_on_voit_bien_l_horizon_--ar_32_--edi_a65de4f5-b899-488b-93c1-794bfe9cf764_3.webp",
   "w": 1344,
   "h": 896,
   "voie": 3,
@@ -241,32 +225,16 @@ window.CARTES = [
   "prompt": "Fais les tous sur la scene de la pizaria --ar 16:9 --edit https://s.mj.run/bxCQ1GHU5eQ --v 8.2"
  },
  {
-  "src": "cartes/voie-3/amuseurs01_Fais_les_tous_sur_la_scene_de_la_pizaria_--ar_169__5fc2ea90-6282-4700-ae4a-cf114a5325ea_0.png",
-  "mini": "cartes/mini/voie-3/amuseurs01_Fais_les_tous_sur_la_scene_de_la_pizaria_--ar_169__5fc2ea90-6282-4700-ae4a-cf114a5325ea_0.webp",
-  "w": 1456,
-  "h": 816,
-  "voie": 3,
-  "prompt": "Fais les tous sur la scene de la pizaria --ar 16:9 --edit https://s.mj.run/bxCQ1GHU5eQ --v 8.2"
- },
- {
   "src": "cartes/voie-3/amuseurs01_fais_un_mix_de_randonne_IA_lune_ministre_franais_g_0241b1a2-b181-4297-a7a2-8884600d3033_1.png",
   "mini": "cartes/mini/voie-3/amuseurs01_fais_un_mix_de_randonne_IA_lune_ministre_franais_g_0241b1a2-b181-4297-a7a2-8884600d3033_1.webp",
   "w": 1232,
   "h": 928,
   "voie": 3,
-  "prompt": "fais un mix de randonnÃ©e, IA, lune, ministÃ¨re franÃ§ais, glace bain et pellicule de film --chaos 35 --ar 4:3 --stylize 200 --weird 190 --v 8.2"
+  "prompt": "fais un mix de randonnée, IA, lune, ministère français, glace bain et pellicule de film --chaos 35 --ar 4:3 --stylize 200 --weird 190 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_five_nights_at_freddy_s_--ar_32_--v_8.2_6b14e9db-24fd-48a0-8584-c4be570e0fac_2 (1).png",
   "mini": "cartes/mini/voie-3/amuseurs01_five_nights_at_freddy_s_--ar_32_--v_8.2_6b14e9db-24fd-48a0-8584-c4be570e0fac_2 (1).webp",
-  "w": 1344,
-  "h": 896,
-  "voie": 3,
-  "prompt": "five nights at freddy s --ar 3:2 --v 8.2"
- },
- {
-  "src": "cartes/voie-3/amuseurs01_five_nights_at_freddy_s_--ar_32_--v_8.2_6b14e9db-24fd-48a0-8584-c4be570e0fac_2.png",
-  "mini": "cartes/mini/voie-3/amuseurs01_five_nights_at_freddy_s_--ar_32_--v_8.2_6b14e9db-24fd-48a0-8584-c4be570e0fac_2.webp",
   "w": 1344,
   "h": 896,
   "voie": 3,
@@ -302,7 +270,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "jack russel. un chÃ¢teau mÃ©diÃ©val au bout de la forÃªt]. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan moyen (full shot) : le personnage cadrÃ© en pied, de la tÃªte aux pieds. Vue de face, appareil Ã  hauteur du sujet. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. Au lever ou au coucher du soleil, lumiÃ¨re dorÃ©e et rasante. Aquarelle, couleurs transparentes qui se diffusent sur un papier texturÃ©. Le sujet est placÃ© en bas de l'image. Photo macro, sujet minuscule vu de trÃ¨s prÃ¨s avec un niveau de dÃ©tail extrÃªme. Vue en contre-plongÃ©e, depuis le sol vers le haut : le sujet paraÃ®t immense et imposant. Format paysage 3:2, comme une photo classique. Palette de couleurs froides : bleus, verts et violets. Au lever ou au coucher du soleil, lumiÃ¨re dorÃ©e et rasante. --ar 3:2 --v 8.2"
+  "prompt": "jack russel. un château médiéval au bout de la forêt]. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan moyen (full shot) : le personnage cadré en pied, de la tête aux pieds. Vue de face, appareil à hauteur du sujet. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. Au lever ou au coucher du soleil, lumière dorée et rasante. Aquarelle, couleurs transparentes qui se diffusent sur un papier texturé. Le sujet est placé en bas de l'image. Photo macro, sujet minuscule vu de très près avec un niveau de détail extrême. Vue en contre-plongée, depuis le sol vers le haut : le sujet paraît immense et imposant. Format paysage 3:2, comme une photo classique. Palette de couleurs froides : bleus, verts et violets. Au lever ou au coucher du soleil, lumière dorée et rasante. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Jaimerais_une_carte_postale_danniverssaire_comme_c_6e2d2f17-5894-4363-a07b-eac9f2829128_0.png",
@@ -318,7 +286,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Je veux un capibara chill qui mange un celeri avec un air de baetitude. En arriÃ¨re plan floutÃ©, une petite piscine dans laquelle on aperÃ§ois une bouÃ©e en flamand rose et des ballons de plage aux couleurs acidulÃ©es dans une villa Ã©thique et complÃ¨tement intÃ©grÃ©e au paysage. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan moyen (full shot) : le personnage cadrÃ© en pied, de la tÃªte aux pieds. En plein milieu. Objectif fish-eye, image trÃ¨s bombÃ©e, les lignes droites se courbent. Vue en contre-plongÃ©e, depuis le sol vers le haut : le sujet paraÃ®t immense et imposant. Format portrait 2:3. Palette de couleurs chaudes pop et acidulÃ©es jaunes, roses, verts, oranges. Fin de matinÃ©e. --no texte, personnage humains --ar 3:2 --v 8.2"
+  "prompt": "Je veux un capibara chill qui mange un celeri avec un air de baetitude. En arrière plan flouté, une petite piscine dans laquelle on aperçois une bouée en flamand rose et des ballons de plage aux couleurs acidulées dans une villa éthique et complètement intégrée au paysage. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan moyen (full shot) : le personnage cadré en pied, de la tête aux pieds. En plein milieu. Objectif fish-eye, image très bombée, les lignes droites se courbent. Vue en contre-plongée, depuis le sol vers le haut : le sujet paraît immense et imposant. Format portrait 2:3. Palette de couleurs chaudes pop et acidulées jaunes, roses, verts, oranges. Fin de matinée. --no texte, personnage humains --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_je_veux_un_fond_multiclore_--ar_32_--edit_httpss.m_088d6bbf-f0d0-4bf3-a321-7a5c00d9f70c_0.png",
@@ -361,14 +329,6 @@ window.CARTES = [
   "prompt": "on ajoute des plantes, Alexia a les yeux bruns --ar 3:2 --edit https://s.mj.run/5nxK9WfUQ5U --v 8.2"
  },
  {
-  "src": "cartes/voie-3/amuseurs01_on_ajoute_des_plantes_Alexia_a_les_yeux_bruns_--ar_5de755d7-96eb-4f64-8728-f95dfc23edd6_2.png",
-  "mini": "cartes/mini/voie-3/amuseurs01_on_ajoute_des_plantes_Alexia_a_les_yeux_bruns_--ar_5de755d7-96eb-4f64-8728-f95dfc23edd6_2.webp",
-  "w": 1344,
-  "h": 896,
-  "voie": 3,
-  "prompt": "on ajoute des plantes, Alexia a les yeux bruns --ar 3:2 --edit https://s.mj.run/5nxK9WfUQ5U --v 8.2"
- },
- {
   "src": "cartes/voie-3/amuseurs01_Patate_en_2D_qui_dance_avec_des_lunette_pixeliser__ec95ea2a-7f1a-4ef6-ab47-aa7952431187_0.png",
   "mini": "cartes/mini/voie-3/amuseurs01_Patate_en_2D_qui_dance_avec_des_lunette_pixeliser__ec95ea2a-7f1a-4ef6-ab47-aa7952431187_0.webp",
   "w": 1232,
@@ -382,7 +342,7 @@ window.CARTES = [
   "w": 1024,
   "h": 1024,
   "voie": 3,
-  "prompt": "peux tu me faire le mÃªme chat sur un fond damier rose clair et j'aimerai que le chat porte un chapeau d'anniversaire avec un texte sur le fond : joyeux anniversaire taty et un emoji coeur --ar 1:1 --edit https://s.mj.run/9Symztq68Ls --v 8.2"
+  "prompt": "peux tu me faire le même chat sur un fond damier rose clair et j'aimerai que le chat porte un chapeau d'anniversaire avec un texte sur le fond : joyeux anniversaire taty et un emoji coeur --ar 1:1 --edit https://s.mj.run/9Symztq68Ls --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_pizzeria_five_night_freddy_decor_--ar_32_--v_8.2_4dc3662c-6f58-4faf-9a29-361b6de99b62_1.png",
@@ -414,7 +374,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Rien au premier plan, le regard part directement vers le dÃ©cor. ArriÃ¨re-plan flou avec un joli bokeh, faible profondeur de champ. Dans le style cubiste de Pablo Picasso. TrÃ¨s gros plan (extreme close-up). Le sujet est au centre de l'image, composition symÃ©trique. Super-tÃ©lÃ©objectif 600 mm, pris de trÃ¨s loin : l'arriÃ¨re-plan lointain paraÃ®t immense derriÃ¨re le sujet. Vue en plongÃ©e depuis un drone, vue aÃ©rienne du dessus. Format carrÃ© 1:1. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. Au lever ou au coucher du soleil, lumiÃ¨re dorÃ©e et rasante. --ar 3:2 --v 8.2"
+  "prompt": "Rien au premier plan, le regard part directement vers le décor. Arrière-plan flou avec un joli bokeh, faible profondeur de champ. Dans le style cubiste de Pablo Picasso. Très gros plan (extreme close-up). Le sujet est au centre de l'image, composition symétrique. Super-téléobjectif 600 mm, pris de très loin : l'arrière-plan lointain paraît immense derrière le sujet. Vue en plongée depuis un drone, vue aérienne du dessus. Format carré 1:1. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. Au lever ou au coucher du soleil, lumière dorée et rasante. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Rien_au_premier_plan_le_regard_part_directement_ve_95bc7b2f-a0a3-4fa9-ac27-ce64c30c1a96_2.png",
@@ -422,7 +382,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Rien au premier plan, le regard part directement vers le dÃ©cor. En arriÃ¨re-plan, [dÃ©cris le paysage, ex. : des montagnes enneigÃ©es derriÃ¨re une forÃªt]. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan d'ensemble (extreme wide shot) : le dÃ©cor occupe toute l'image, le sujet est tout petit dans le paysage. Le sujet est placÃ© sur le tiers gauche de l'image (rÃ¨gle des tiers). Super-tÃ©lÃ©objectif 600 mm, pris de trÃ¨s loin : l'arriÃ¨re-plan lointain paraÃ®t immense derriÃ¨re le sujet. Vue en plongÃ©e depuis un drone, vue aÃ©rienne du dessus. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. Au lever ou au coucher du soleil, lumiÃ¨re dorÃ©e et rasante. --ar 3:2 --v 8.2"
+  "prompt": "Rien au premier plan, le regard part directement vers le décor. En arrière-plan, [décris le paysage, ex. : des montagnes enneigées derrière une forêt]. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan d'ensemble (extreme wide shot) : le décor occupe toute l'image, le sujet est tout petit dans le paysage. Le sujet est placé sur le tiers gauche de l'image (règle des tiers). Super-téléobjectif 600 mm, pris de très loin : l'arrière-plan lointain paraît immense derrière le sujet. Vue en plongée depuis un drone, vue aérienne du dessus. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. Au lever ou au coucher du soleil, lumière dorée et rasante. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Rien_au_premier_plan_le_regard_part_directement_ve_64718753-e852-4734-b07b-69b464835e13_1.png",
@@ -430,7 +390,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Rien au premier plan, le regard part directement vers le dÃ©cor. En arriÃ¨re-plan, une construction faite de triangles enchevetreeset de rectangles horizontaux . Dans le style cubiste de Pablo Picasso. Plan d'ensemble (extreme wide shot) : le dÃ©cor occupe toute l'image, le sujet est tout petit dans le paysage. Le sujet est placÃ© sur le tiers gauche de l'image (rÃ¨gle des tiers). Photo macro, sujet minuscule vu de trÃ¨s prÃ¨s avec un niveau de dÃ©tail extrÃªme. Vue de profil, sur le cÃ´tÃ© du sujet. Format paysage 16:9, comme un Ã©cran de tÃ©lÃ©vision. Palette de couleurs froides : bleus, verts et violets. En plein midi, lumiÃ¨re vive du soleil au zÃ©nith, ombres courtes. --ar 3:2 --v 8.2"
+  "prompt": "Rien au premier plan, le regard part directement vers le décor. En arrière-plan, une construction faite de triangles enchevetreeset de rectangles horizontaux . Dans le style cubiste de Pablo Picasso. Plan d'ensemble (extreme wide shot) : le décor occupe toute l'image, le sujet est tout petit dans le paysage. Le sujet est placé sur le tiers gauche de l'image (règle des tiers). Photo macro, sujet minuscule vu de très près avec un niveau de détail extrême. Vue de profil, sur le côté du sujet. Format paysage 16:9, comme un écran de télévision. Palette de couleurs froides : bleus, verts et violets. En plein midi, lumière vive du soleil au zénith, ombres courtes. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Rien_au_premier_plan_le_regard_part_directement_ve_c9a83683-6ee7-40d8-bb04-8bada41dfe94_2.png",
@@ -438,7 +398,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Rien au premier plan, le regard part directement vers le dÃ©cor. En arriÃ¨re-plan, une vue des montagne de Kabylie et des villages repartie sur ces montagne. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan d'ensemble (extreme wide shot) : le dÃ©cor occupe toute l'image, le sujet est tout petit dans le paysage. Le sujet est au centre de l'image, composition symÃ©trique. Super-tÃ©lÃ©objectif 600 mm, pris de trÃ¨s loin : l'arriÃ¨re-plan lointain paraÃ®t immense derriÃ¨re le sujet. Vue en plongÃ©e depuis un drone, vue aÃ©rienne du dessus. Format paysage 16:9, comme un Ã©cran de tÃ©lÃ©vision. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. Au lever ou au coucher du soleil, lumiÃ¨re dorÃ©e et rasante. --chaos 35 --ar 3:2 --stylize 200 --weird 190 --v 8.2"
+  "prompt": "Rien au premier plan, le regard part directement vers le décor. En arrière-plan, une vue des montagne de Kabylie et des villages repartie sur ces montagne. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan d'ensemble (extreme wide shot) : le décor occupe toute l'image, le sujet est tout petit dans le paysage. Le sujet est au centre de l'image, composition symétrique. Super-téléobjectif 600 mm, pris de très loin : l'arrière-plan lointain paraît immense derrière le sujet. Vue en plongée depuis un drone, vue aérienne du dessus. Format paysage 16:9, comme un écran de télévision. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. Au lever ou au coucher du soleil, lumière dorée et rasante. --chaos 35 --ar 3:2 --stylize 200 --weird 190 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Rien_au_premier_plan_le_regard_part_directement_ve_fc7efd64-db7e-41eb-b331-d700d6f6ef9f_3.png",
@@ -446,19 +406,11 @@ window.CARTES = [
   "w": 1232,
   "h": 928,
   "voie": 3,
-  "prompt": "Rien au premier plan, le regard part directement vers le dÃ©cor. En arriÃ¨re-plan, une vue des montagne de Kabylie et des villages repartie sur ces montagne. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan d'ensemble (extreme wide shot) : le dÃ©cor occupe toute l'image, le sujet est tout petit dans le paysage. Le sujet est au centre de l'image, composition symÃ©trique. Super-tÃ©lÃ©objectif 600 mm, pris de trÃ¨s loin : l'arriÃ¨re-plan lointain paraÃ®t immense derriÃ¨re le sujet. Vue en plongÃ©e depuis un drone, vue aÃ©rienne du dessus. Format paysage 16:9, comme un Ã©cran de tÃ©lÃ©vision. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. Au lever ou au coucher du soleil, lumiÃ¨re dorÃ©e et rasante. --ar 4:3 --v 8.2"
+  "prompt": "Rien au premier plan, le regard part directement vers le décor. En arrière-plan, une vue des montagne de Kabylie et des villages repartie sur ces montagne. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan d'ensemble (extreme wide shot) : le décor occupe toute l'image, le sujet est tout petit dans le paysage. Le sujet est au centre de l'image, composition symétrique. Super-téléobjectif 600 mm, pris de très loin : l'arrière-plan lointain paraît immense derrière le sujet. Vue en plongée depuis un drone, vue aérienne du dessus. Format paysage 16:9, comme un écran de télévision. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. Au lever ou au coucher du soleil, lumière dorée et rasante. --ar 4:3 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_spiderman_tom_hollande_nrand_new_day_--ar_32_--v_8_bec8f081-0a4e-4832-87ac-47d6a0d64ce2_1 (1).png",
   "mini": "cartes/mini/voie-3/amuseurs01_spiderman_tom_hollande_nrand_new_day_--ar_32_--v_8_bec8f081-0a4e-4832-87ac-47d6a0d64ce2_1 (1).webp",
-  "w": 1344,
-  "h": 896,
-  "voie": 3,
-  "prompt": "spiderman tom hollande nrand new day --ar 3:2 --v 8.2"
- },
- {
-  "src": "cartes/voie-3/amuseurs01_spiderman_tom_hollande_nrand_new_day_--ar_32_--v_8_bec8f081-0a4e-4832-87ac-47d6a0d64ce2_1.png",
-  "mini": "cartes/mini/voie-3/amuseurs01_spiderman_tom_hollande_nrand_new_day_--ar_32_--v_8_bec8f081-0a4e-4832-87ac-47d6a0d64ce2_1.webp",
   "w": 1344,
   "h": 896,
   "voie": 3,
@@ -470,7 +422,7 @@ window.CARTES = [
   "w": 1232,
   "h": 928,
   "voie": 3,
-  "prompt": "Sur une carte postale, dessine Mini qui joue avec un crocodile. Ils jouent avec de la pate Ã  modeler rouge. Sur une table dans une grande grande maiso, avec des fenetres carrÃ©. Les murs sont marons --chaos 35 --ar 4:3 --stylize 200 --weird 190 --v 8.2"
+  "prompt": "Sur une carte postale, dessine Mini qui joue avec un crocodile. Ils jouent avec de la pate à modeler rouge. Sur une table dans une grande grande maiso, avec des fenetres carré. Les murs sont marons --chaos 35 --ar 4:3 --stylize 200 --weird 190 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_un_chat_souriant_au_pelage_couleur_arc_en_ciel._il_cb97dc48-8336-4a24-986b-d7c3d2afdb35_0.png",
@@ -478,7 +430,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "un chat souriant au pelage couleur arc en ciel. il est dans une maison a cotÃ© de la tv, il marche sur le plafond. style collage papier --ar 3:2 --v 8.2"
+  "prompt": "un chat souriant au pelage couleur arc en ciel. il est dans une maison a coté de la tv, il marche sur le plafond. style collage papier --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_un_chat_souriant_au_pelage_couleur_arc_en_ciel._il_cb97dc48-8336-4a24-986b-d7c3d2afdb35_2.png",
@@ -486,7 +438,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "un chat souriant au pelage couleur arc en ciel. il est dans une maison a cotÃ© de la tv, il marche sur le plafond. style collage papier --ar 3:2 --v 8.2"
+  "prompt": "un chat souriant au pelage couleur arc en ciel. il est dans une maison a coté de la tv, il marche sur le plafond. style collage papier --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_un_crocodile_qui_a_une_salopette_en_dessin_anime_e_0d16427e-84c4-4e83-8e51-ba9d9eca0c45_0.png",
@@ -502,7 +454,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "un doudou mouton blanc qui a une couverture a la place des jambes. ArriÃ¨re-plan flou avec un joli bokeh, faible profondeur de champ. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan moyen (full shot) : le personnage cadrÃ© en pied, de la tÃªte aux pieds. Le sujet est au centre de l'image, composition symÃ©trique. Objectif fish-eye, image trÃ¨s bombÃ©e, les lignes droites se courbent. Vue de profil, sur le cÃ´tÃ© du sujet. Format portrait 3:4. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. En plein midi, lumiÃ¨re vive du soleil au zÃ©nith, ombres courtes. --ar 3:2 --v 8.2"
+  "prompt": "un doudou mouton blanc qui a une couverture a la place des jambes. Arrière-plan flou avec un joli bokeh, faible profondeur de champ. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan moyen (full shot) : le personnage cadré en pied, de la tête aux pieds. Le sujet est au centre de l'image, composition symétrique. Objectif fish-eye, image très bombée, les lignes droites se courbent. Vue de profil, sur le côté du sujet. Format portrait 3:4. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. En plein midi, lumière vive du soleil au zénith, ombres courtes. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_un_ours_debout_en_train_d_HURLER._foret._Rendu_pho_e5e17f65-5ed7-47ae-90b4-988bf97cdfe6_3.png",
@@ -510,7 +462,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "un ours debout en train d HURLER. foret. Rendu photorÃ©aliste, trÃ¨s dÃ©taillÃ©, comme une vraie photographie. Plan moyen (full shot) : le personnage cadrÃ© en pied, de la tÃªte aux pieds. Le sujet est au centre de l'image, composition symÃ©trique. Objectif fish-eye, image trÃ¨s bombÃ©e, les lignes droites se courbent. Vue de profil, sur le cÃ´tÃ© du sujet. Format portrait 3:4. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. En pleine nuit, vers minuit, sous la lumiÃ¨re de la lune. --ar 3:2 --v 8.2"
+  "prompt": "un ours debout en train d HURLER. foret. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan moyen (full shot) : le personnage cadré en pied, de la tête aux pieds. Le sujet est au centre de l'image, composition symétrique. Objectif fish-eye, image très bombée, les lignes droites se courbent. Vue de profil, sur le côté du sujet. Format portrait 3:4. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. En pleine nuit, vers minuit, sous la lumière de la lune. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Une_fille_afro_lumineuse_avec_le_sourire._Dcor_dau_bc4f24e0-4988-4888-a210-309dfc74b0fd_0.png",
@@ -518,7 +470,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "Une fille afro lumineuse avec le sourire. DÃ©cor d'automne. Gratitude. Reconnaissante et prÃªte Ã  dÃ©marrer cette nouvelle saison d'automne avec amour, bonheur, succÃ¨s.Fille lumineuse comme un rayon de soleil comme si le monde m'appartenait. Plan gÃ©nÃ©ral (wide shot) : on voit toute la scÃ¨ne et ses personnages en entier. Le sujet est placÃ© sur le tiers droit de l'image (rÃ¨gle des tiers). Super-tÃ©lÃ©objectif 600 mm, pris de trÃ¨s loin : l'arriÃ¨re-plan lointain paraÃ®t immense derriÃ¨re le sujet. Vue de face, appareil Ã  hauteur du sujet. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangÃ©s, rouges et jaunes dorÃ©s. En plein midi, lumiÃ¨re vive du soleil au zÃ©nith, ombres courtes. Style automne. --ar 3:2 --v 8.2"
+  "prompt": "Une fille afro lumineuse avec le sourire. Décor d'automne. Gratitude. Reconnaissante et prête à démarrer cette nouvelle saison d'automne avec amour, bonheur, succès.Fille lumineuse comme un rayon de soleil comme si le monde m'appartenait. Plan général (wide shot) : on voit toute la scène et ses personnages en entier. Le sujet est placé sur le tiers droit de l'image (règle des tiers). Super-téléobjectif 600 mm, pris de très loin : l'arrière-plan lointain paraît immense derrière le sujet. Vue de face, appareil à hauteur du sujet. Format paysage 3:2, comme une photo classique. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. En plein midi, lumière vive du soleil au zénith, ombres courtes. Style automne. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_une_foule_de_partisans_qui_tiennent_des_bannires_e_0f42f295-367d-4ba6-a924-df3bad2aefab_0.png",
@@ -526,7 +478,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "une foule de partisans qui tiennent des banniÃ¨res et des pancartes qui disent \"Ariel PrÃ©sident\" --ar 3:2 --v 8.2"
+  "prompt": "une foule de partisans qui tiennent des bannières et des pancartes qui disent \"Ariel Président\" --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_une_illustration_pour_mon_single_AI_is_cool_dans_u_1c547200-b258-4071-af17-b85e8dea5133_3.png",
@@ -534,7 +486,7 @@ window.CARTES = [
   "w": 1232,
   "h": 928,
   "voie": 3,
-  "prompt": "une illustration pour mon single \"AI is cool\" dans un style indie pop, k-pop, chanteuse. moderne, Ã©purÃ©, texte : juste le titre. Couleurs : turquoise, vert anis, bleu pÃ©trole et une touche de orange pour mettre du peps. --chaos 35 --ar 4:3 --stylize 200 --weird 190 --v 8.2"
+  "prompt": "une illustration pour mon single \"AI is cool\" dans un style indie pop, k-pop, chanteuse. moderne, épuré, texte : juste le titre. Couleurs : turquoise, vert anis, bleu pétrole et une touche de orange pour mettre du peps. --chaos 35 --ar 4:3 --stylize 200 --weird 190 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_une_licorne_et_une_princesse_lun__cote_de_lautre_d_12d2f462-becd-43fe-9abd-543d463af7b5_2.png",
@@ -542,7 +494,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "une licorne et une princesse l'un Ã  cote de l'autre de face. Autour d'eux il y a un brouillard rose. On voit les personnages en entier. La princesse a une robe rose et ressemble Ã  une personne rÃ©elle. Elle a les cheveux longs et blonds et les yeux bleus. La licorne est blanche avec une criniÃ¨re rose et une corne dorÃ©e. --ar 3:2 --v 8.2"
+  "prompt": "une licorne et une princesse l'un à cote de l'autre de face. Autour d'eux il y a un brouillard rose. On voit les personnages en entier. La princesse a une robe rose et ressemble à une personne réelle. Elle a les cheveux longs et blonds et les yeux bleus. La licorne est blanche avec une crinière rose et une corne dorée. --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Une_orange_qui_danse_en_2D_qui_a_une_chapeau_de_bo_275bfb81-5c53-4d16-9091-f16db288a6ff_3.png",
@@ -558,7 +510,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "une poule qui fait du vÃ©lo dans l 'espace --ar 3:2 --v 8.2"
+  "prompt": "une poule qui fait du vélo dans l 'espace --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_une_voiture_de_sport_rouge_sur_une_route_dans_la_v_e4a1f5d5-e6f3-4ada-8a96-4405f211fddb_0.png",
@@ -566,7 +518,7 @@ window.CARTES = [
   "w": 1344,
   "h": 896,
   "voie": 3,
-  "prompt": "une voiture de sport rouge sur une route dans la ville dans un dÃ©cor rÃ©el. le ciel est bleu. Elle est garÃ©e. Pas d'autre voiture autour. elle est au milieu de la route --ar 3:2 --v 8.2"
+  "prompt": "une voiture de sport rouge sur une route dans la ville dans un décor réel. le ciel est bleu. Elle est garée. Pas d'autre voiture autour. elle est au milieu de la route --ar 3:2 --v 8.2"
  },
  {
   "src": "cartes/voie-3/amuseurs01_Whimsical_watercolor_family_portrait_full_body_fiv_a1e50f28-c1c1-4734-a58c-480200913006_0.png",

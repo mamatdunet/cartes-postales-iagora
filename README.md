@@ -26,6 +26,8 @@ Site statique de l'atelier :
    ```
 
    Il crée les miniatures dans `galerie/cartes/mini/` et réécrit `galerie/cartes.js`.
+   Les copies identiques d'une même image (« photo (1).png ») ne sont affichées qu'une fois,
+   et les fichiers qui ne sont pas des images (vidéos…) sont ignorés : le script les signale.
 3. Commiter le tout (images, miniatures et `cartes.js`).
 
 Tant que la galerie est vide, elle affiche « Les cartes arrivent bientôt ».
