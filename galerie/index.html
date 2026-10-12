@@ -136,7 +136,7 @@
       display: block;
       width: 100%;
       margin: 0 0 32px;
-      padding: 12px 12px 34px;
+      padding: 12px 12px 10px;
       border: 1px solid var(--ink-200);
       border-radius: 4px;
       background: var(--white);
@@ -165,42 +165,17 @@
       background: var(--ink-100);
     }
 
-    /* Timbre dentelé, qui déborde du coin de la carte */
+    /* Timbre dentelé façon Marianne, qui déborde du coin de la carte */
     .timbre {
       position: absolute;
-      top: -14px;
+      top: -16px;
       right: -12px;
-      width: 50px;
-      height: 60px;
-      padding: 5px;
-      background: var(--white);
-      -webkit-mask:
-        radial-gradient(circle 3px at center, #0000 92%, #000) -3.5px -3.5px / 7px 7px,
-        linear-gradient(#000 0 0) content-box;
-              mask:
-        radial-gradient(circle 3px at center, #0000 92%, #000) -3.5px -3.5px / 7px 7px,
-        linear-gradient(#000 0 0) content-box;
-      filter: drop-shadow(0 1px 1.5px rgba(20, 20, 26, .28));
+      width: 52px;
+      height: auto;
+      filter: drop-shadow(0 1px 1.5px rgba(20, 20, 26, .3));
       transform: rotate(5deg);
+      pointer-events: none;
     }
-    .timbre span {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      background: var(--blue-600);
-      color: var(--white);
-      font-family: var(--font-display);
-      line-height: .9;
-      font-size: 15px;
-      letter-spacing: .02em;
-    }
-    .timbre span b { font-weight: 400; color: var(--pink-600); }
-    .timbre span small { font-family: var(--font-body); font-weight: 700; font-size: 7px; letter-spacing: .1em; margin-top: 3px; }
-    .carte[data-voie="1"] .timbre span { background: var(--ink-900); }
-    .carte[data-voie="3"] .timbre span { background: var(--pink-600); }
-    .carte[data-voie="3"] .timbre span b { color: var(--blue-600); }
 
     /* Tampon de la poste */
     .tampon {
@@ -215,16 +190,17 @@
       pointer-events: none;
     }
 
-    /* Légende manuscrite au bas de la carte */
+    /* Légende au bas de la carte, sous l'image */
     .legende {
-      position: absolute;
-      left: 14px;
-      right: 14px;
-      bottom: 8px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
+      gap: 2px 10px;
+      margin-top: 9px;
+      padding: 0 2px;
       font-size: 12px;
       font-weight: 600;
+      line-height: 1.35;
       letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--ink-500);
@@ -413,12 +389,10 @@
 
     @media (max-width: 640px) {
       .mur { columns: 2 140px; column-gap: 16px; }
-      .carte { padding: 8px 8px 26px; margin-bottom: 22px; }
-      .timbre { width: 36px; height: 44px; padding: 4px; top: -10px; right: -8px; }
-      .timbre span { font-size: 11px; }
-      .timbre span small { display: none; }
+      .carte { padding: 8px 8px 8px; margin-bottom: 22px; }
+      .timbre { width: 38px; top: -12px; right: -8px; }
       .tampon { width: 42px; height: 42px; top: -13px; right: 12px; }
-      .legende { font-size: 10px; left: 10px; right: 10px; bottom: 6px; }
+      .legende { font-size: 10px; margin-top: 6px; }
       .legende span:last-child { display: none; }
       .album { grid-template-columns: 1fr; padding: 22px; }
     }
@@ -506,6 +480,20 @@
     const NOMS_VOIES = { 1: "Ordinosaure", 2: "IA frugale", 3: "IA Rolls-Royce" };
     const cartes = Array.isArray(window.CARTES) ? window.CARTES : [];
     const mur = document.getElementById("mur");
+    // Contour dentelé du timbre (demi-cercles creusés tout autour, comme un timbre Marianne)
+    const DENTS = "M2.1 0H4.15 A2.1 2.1 0 0 0 8.35 0H10.4 A2.1 2.1 0 0 0 14.6 0H16.65 A2.1 2.1 0 0 0 20.85 0H22.9 A2.1 2.1 0 0 0 27.1 0H29.15 A2.1 2.1 0 0 0 33.35 0H35.4 A2.1 2.1 0 0 0 39.6 0H41.65 A2.1 2.1 0 0 0 45.85 0H47.9 A2.1 2.1 0 0 0 50 2.1V4.1 A2.1 2.1 0 0 0 50 8.3V10.3 A2.1 2.1 0 0 0 50 14.5V16.5 A2.1 2.1 0 0 0 50 20.7V22.7 A2.1 2.1 0 0 0 50 26.9V28.9 A2.1 2.1 0 0 0 50 33.1V35.1 A2.1 2.1 0 0 0 50 39.3V41.3 A2.1 2.1 0 0 0 50 45.5V47.5 A2.1 2.1 0 0 0 50 51.7V53.7 A2.1 2.1 0 0 0 50 57.9V59.9 A2.1 2.1 0 0 0 47.9 62H45.85 A2.1 2.1 0 0 0 41.65 62H39.6 A2.1 2.1 0 0 0 35.4 62H33.35 A2.1 2.1 0 0 0 29.15 62H27.1 A2.1 2.1 0 0 0 22.9 62H20.85 A2.1 2.1 0 0 0 16.65 62H14.6 A2.1 2.1 0 0 0 10.4 62H8.35 A2.1 2.1 0 0 0 4.15 62H2.1 A2.1 2.1 0 0 0 0 59.9V57.9 A2.1 2.1 0 0 0 0 53.7V51.7 A2.1 2.1 0 0 0 0 47.5V45.5 A2.1 2.1 0 0 0 0 41.3V39.3 A2.1 2.1 0 0 0 0 35.1V33.1 A2.1 2.1 0 0 0 0 28.9V26.9 A2.1 2.1 0 0 0 0 22.7V20.7 A2.1 2.1 0 0 0 0 16.5V14.5 A2.1 2.1 0 0 0 0 10.3V8.3 A2.1 2.1 0 0 0 0 4.1V2.1 A2.1 2.1 0 0 0 2.1 0Z";
+    const COULEURS_TIMBRE = { 1: ["#000000", "#ff50be"], 2: ["#3045d1", "#ff50be"], 3: ["#d62e96", "#161f5e"] };
+    const timbre = voie => {
+      const [fond, accent] = COULEURS_TIMBRE[voie] || COULEURS_TIMBRE[2];
+      return `<svg class="timbre" viewBox="0 0 50 62" aria-hidden="true">
+        <path d="${DENTS}" fill="#fff"/>
+        <rect x="5" y="5" width="40" height="52" fill="${fond}"/>
+        <text x="8" y="13.5" font-family="Anton, Arial, sans-serif" font-size="7.4" letter-spacing=".3" fill="#fff">IAGORA</text>
+        <text transform="translate(11.6 47) rotate(-90)" font-family="Heebo, Arial, sans-serif" font-weight="700" font-size="4.4" fill="#fff">Paris</text>
+        <text x="41.5" y="43" text-anchor="end" font-family="Anton, Arial, sans-serif" font-size="22" fill="${accent}">IA</text>
+        <text x="8" y="53.5" font-family="Heebo, Arial, sans-serif" font-weight="700" font-size="4.2" fill="#fff">Lettre IA · 10.10.26</text>
+      </svg>`;
+    };
     const tampon = id => `<svg class="tampon" viewBox="0 0 60 60" aria-hidden="true" fill="none" stroke="currentColor">
         <circle cx="30" cy="30" r="27" stroke-width="1.6"/><circle cx="30" cy="30" r="20" stroke-width="1"/>
         <path id="${id}" d="M30 30 m-23.5 0 a23.5 23.5 0 1 1 47 0 a23.5 23.5 0 1 1 -47 0" stroke="none"/>
@@ -526,7 +514,7 @@
       b.innerHTML = `
         <img src="${c.mini}" width="${c.w}" height="${c.h}" loading="lazy" decoding="async" alt="">
         ${tampon("arc" + i)}
-        <span class="timbre" aria-hidden="true"><span><b>IA</b>GORA<small>10.10.26</small></span></span>
+        ${timbre(c.voie)}
         <span class="legende"><span>N° ${String(i + 1).padStart(2, "0")}${c.prompt ? " · ✎ prompt" : ""}</span><span>${voie}</span></span>`;
       b.addEventListener("click", () => ouvrir(i));
       mur.appendChild(b);
