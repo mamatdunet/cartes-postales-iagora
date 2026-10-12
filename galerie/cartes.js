@@ -65,8 +65,8 @@ window.CARTES = [
   "prompt": "add text \"Love is life\" in the empty zone --chaos 35 --ar 77:58 --edit https://s.mj.run/XomjFTgeFmk --stylize 200 --weird 190 --v 8.2"
  },
  {
-  "src": "cartes/voie-3/amuseurs01_ajoute_intelligencejet_prive_richesse_argent_--ar__c8c02a16-c91a-4c71-adb2-84131368ec1d_0 (1).png",
-  "mini": "cartes/mini/voie-3/amuseurs01_ajoute_intelligencejet_prive_richesse_argent_--ar__c8c02a16-c91a-4c71-adb2-84131368ec1d_0 (1).webp",
+  "src": "cartes/voie-3/amuseurs01_ajoute_intelligencejet_prive_richesse_argent_--ar__c8c02a16-c91a-4c71-adb2-84131368ec1d_0.png",
+  "mini": "cartes/mini/voie-3/amuseurs01_ajoute_intelligencejet_prive_richesse_argent_--ar__c8c02a16-c91a-4c71-adb2-84131368ec1d_0.webp",
   "w": 1456,
   "h": 816,
   "voie": 3,
@@ -169,8 +169,8 @@ window.CARTES = [
   "prompt": "Bonnie de FNAF 1 dans cette image --ar 3:2 --edit https://s.mj.run/rtxNzZ-H9Jk --v 8.2"
  },
  {
-  "src": "cartes/voie-3/amuseurs01_Bonnie_de_FNAF_1_dans_cette_image_--ar_32_--edit_h_495c6909-354e-4fd8-a5d8-ec172a22f258_2 (1).png",
-  "mini": "cartes/mini/voie-3/amuseurs01_Bonnie_de_FNAF_1_dans_cette_image_--ar_32_--edit_h_495c6909-354e-4fd8-a5d8-ec172a22f258_2 (1).webp",
+  "src": "cartes/voie-3/amuseurs01_Bonnie_de_FNAF_1_dans_cette_image_--ar_32_--edit_h_495c6909-354e-4fd8-a5d8-ec172a22f258_2.png",
+  "mini": "cartes/mini/voie-3/amuseurs01_Bonnie_de_FNAF_1_dans_cette_image_--ar_32_--edit_h_495c6909-354e-4fd8-a5d8-ec172a22f258_2.webp",
   "w": 1344,
   "h": 896,
   "voie": 3,
@@ -217,8 +217,8 @@ window.CARTES = [
   "prompt": "en bas à gauche de l'image, il y a un chat. Et ce chat à une fleur rose que j'aimerais que tu supprime. Ne change rien dans l'image d'autres dans l'image --ar 77:58 --edit https://s.mj.run/irIknNrwI80 --v 8.2"
  },
  {
-  "src": "cartes/voie-3/amuseurs01_en_maillot_et_on_voit_bien_l_horizon_--ar_32_--edi_a65de4f5-b899-488b-93c1-794bfe9cf764_3 (1).png",
-  "mini": "cartes/mini/voie-3/amuseurs01_en_maillot_et_on_voit_bien_l_horizon_--ar_32_--edi_a65de4f5-b899-488b-93c1-794bfe9cf764_3 (1).webp",
+  "src": "cartes/voie-3/amuseurs01_en_maillot_et_on_voit_bien_l_horizon_--ar_32_--edi_a65de4f5-b899-488b-93c1-794bfe9cf764_3.png",
+  "mini": "cartes/mini/voie-3/amuseurs01_en_maillot_et_on_voit_bien_l_horizon_--ar_32_--edi_a65de4f5-b899-488b-93c1-794bfe9cf764_3.webp",
   "w": 1344,
   "h": 896,
   "voie": 3,
@@ -233,8 +233,8 @@ window.CARTES = [
   "prompt": "etend l'image sur la droite en paysafe --ar 3:2 --edit https://s.mj.run/SBWaTve6s_k --v 8.2"
  },
  {
-  "src": "cartes/voie-3/amuseurs01_Fais_les_tous_sur_la_scene_de_la_pizaria_--ar_169__5fc2ea90-6282-4700-ae4a-cf114a5325ea_0 (1).png",
-  "mini": "cartes/mini/voie-3/amuseurs01_Fais_les_tous_sur_la_scene_de_la_pizaria_--ar_169__5fc2ea90-6282-4700-ae4a-cf114a5325ea_0 (1).webp",
+  "src": "cartes/voie-3/amuseurs01_Fais_les_tous_sur_la_scene_de_la_pizaria_--ar_169__5fc2ea90-6282-4700-ae4a-cf114a5325ea_0.png",
+  "mini": "cartes/mini/voie-3/amuseurs01_Fais_les_tous_sur_la_scene_de_la_pizaria_--ar_169__5fc2ea90-6282-4700-ae4a-cf114a5325ea_0.webp",
   "w": 1456,
   "h": 816,
   "voie": 3,
@@ -249,8 +249,8 @@ window.CARTES = [
   "prompt": "fais un mix de randonnée, IA, lune, ministère français, glace bain et pellicule de film --chaos 35 --ar 4:3 --stylize 200 --weird 190 --v 8.2"
  },
  {
-  "src": "cartes/voie-3/amuseurs01_five_nights_at_freddy_s_--ar_32_--v_8.2_6b14e9db-24fd-48a0-8584-c4be570e0fac_2 (1).png",
-  "mini": "cartes/mini/voie-3/amuseurs01_five_nights_at_freddy_s_--ar_32_--v_8.2_6b14e9db-24fd-48a0-8584-c4be570e0fac_2 (1).webp",
+  "src": "cartes/voie-3/amuseurs01_five_nights_at_freddy_s_--ar_32_--v_8.2_6b14e9db-24fd-48a0-8584-c4be570e0fac_2.png",
+  "mini": "cartes/mini/voie-3/amuseurs01_five_nights_at_freddy_s_--ar_32_--v_8.2_6b14e9db-24fd-48a0-8584-c4be570e0fac_2.webp",
   "w": 1344,
   "h": 896,
   "voie": 3,
@@ -337,8 +337,8 @@ window.CARTES = [
   "prompt": "monstre des bakroom qui cour --ar 3:2 --v 8.2"
  },
  {
-  "src": "cartes/voie-3/amuseurs01_on_ajoute_des_plantes_Alexia_a_les_yeux_bruns_--ar_5de755d7-96eb-4f64-8728-f95dfc23edd6_2 (1).png",
-  "mini": "cartes/mini/voie-3/amuseurs01_on_ajoute_des_plantes_Alexia_a_les_yeux_bruns_--ar_5de755d7-96eb-4f64-8728-f95dfc23edd6_2 (1).webp",
+  "src": "cartes/voie-3/amuseurs01_on_ajoute_des_plantes_Alexia_a_les_yeux_bruns_--ar_5de755d7-96eb-4f64-8728-f95dfc23edd6_2.png",
+  "mini": "cartes/mini/voie-3/amuseurs01_on_ajoute_des_plantes_Alexia_a_les_yeux_bruns_--ar_5de755d7-96eb-4f64-8728-f95dfc23edd6_2.webp",
   "w": 1344,
   "h": 896,
   "voie": 3,
@@ -425,8 +425,8 @@ window.CARTES = [
   "prompt": "Rien au premier plan, le regard part directement vers le décor. En arrière-plan, une vue des montagne de Kabylie et des villages repartie sur ces montagne. Rendu photoréaliste, très détaillé, comme une vraie photographie. Plan d'ensemble (extreme wide shot) : le décor occupe toute l'image, le sujet est tout petit dans le paysage. Le sujet est au centre de l'image, composition symétrique. Super-téléobjectif 600 mm, pris de très loin : l'arrière-plan lointain paraît immense derrière le sujet. Vue en plongée depuis un drone, vue aérienne du dessus. Format paysage 16:9, comme un écran de télévision. Palette de couleurs chaudes : orangés, rouges et jaunes dorés. Au lever ou au coucher du soleil, lumière dorée et rasante. --ar 4:3 --v 8.2"
  },
  {
-  "src": "cartes/voie-3/amuseurs01_spiderman_tom_hollande_nrand_new_day_--ar_32_--v_8_bec8f081-0a4e-4832-87ac-47d6a0d64ce2_1 (1).png",
-  "mini": "cartes/mini/voie-3/amuseurs01_spiderman_tom_hollande_nrand_new_day_--ar_32_--v_8_bec8f081-0a4e-4832-87ac-47d6a0d64ce2_1 (1).webp",
+  "src": "cartes/voie-3/amuseurs01_spiderman_tom_hollande_nrand_new_day_--ar_32_--v_8_bec8f081-0a4e-4832-87ac-47d6a0d64ce2_1.png",
+  "mini": "cartes/mini/voie-3/amuseurs01_spiderman_tom_hollande_nrand_new_day_--ar_32_--v_8_bec8f081-0a4e-4832-87ac-47d6a0d64ce2_1.webp",
   "w": 1344,
   "h": 896,
   "voie": 3,
