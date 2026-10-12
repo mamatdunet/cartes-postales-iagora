@@ -1,6 +1,22 @@
 // Fichier généré par scripts/maj-galerie.py : ne pas modifier à la main.
 window.CARTES = [
  {
+  "src": "cartes/voie-1/bravo-test-montagnes.webp",
+  "mini": "cartes/mini/voie-1/bravo-test-montagnes.webp",
+  "w": 2000,
+  "h": 1414,
+  "voie": 1,
+  "prompt": null
+ },
+ {
+  "src": "cartes/voie-1/jaime-la-vie-place-italie.webp",
+  "mini": "cartes/mini/voie-1/jaime-la-vie-place-italie.webp",
+  "w": 2000,
+  "h": 1414,
+  "voie": 1,
+  "prompt": null
+ },
+ {
   "src": "cartes/voie-2/chats-pixel.png",
   "mini": "cartes/mini/voie-2/chats-pixel.webp",
   "w": 1772,
