@@ -36,6 +36,7 @@
     }
 
     * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
     html, body { margin: 0; }
     body {
       background: var(--white);
@@ -340,6 +341,48 @@
       height: auto;
     }
     .vue-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .vue-corps {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
+      max-width: 100%;
+    }
+    .vue-corps figure { min-width: 0; flex-shrink: 1; }
+
+    /* Panneau du prompt */
+    .prompt {
+      flex: 0 0 340px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: calc(100vh - 160px);
+      padding: 20px 22px;
+      border: 2px solid var(--ink-900);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+    .prompt[hidden] { display: none; }
+    .prompt h2 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--pink-700);
+    }
+    .prompt p {
+      margin: 0;
+      overflow-y: auto;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--ink-800);
+      overflow-wrap: anywhere;
+      white-space: pre-line;
+    }
+    .prompt .rond { align-self: flex-start; height: 40px; font-size: 14px; }
+    .rond[aria-expanded="true"] { background: var(--pink-50); border-color: var(--pink-600); color: var(--pink-700); }
     .rond {
       display: inline-flex;
       align-items: center;
@@ -361,6 +404,12 @@
     .rond.primaire { background: var(--blue-600); border-color: var(--blue-600); color: var(--white); }
     .rond.primaire:hover { background: var(--pink-600); border-color: var(--pink-600); color: var(--ink-900); }
     .vue-pos { font-size: 14px; font-weight: 600; color: var(--ink-500); align-self: center; padding: 0 6px; }
+
+    @media (max-width: 760px) {
+      .vue-corps { flex-direction: column; align-items: center; }
+      .prompt { flex-basis: auto; width: 100%; max-height: 32vh; padding: 16px 18px; }
+      .vue.avec-prompt img { max-height: calc(100vh - 32vh - 170px); }
+    }
 
     @media (max-width: 640px) {
       .mur { columns: 2 140px; column-gap: 16px; }
@@ -392,7 +441,7 @@
     <section class="intro">
       <p class="eyebrow">IAgora Paris · Samedi 10 octobre 2026</p>
       <h1>La galerie des cartes</h1>
-      <p class="lead">Toutes les cartes postales imaginées, créées et imprimées par les participantes et participants de l'atelier Cartes Post-IA-les. Clique sur une carte pour la voir en grand.</p>
+      <p class="lead">Toutes les cartes postales imaginées, créées et imprimées par les participantes et participants de l'atelier Cartes Post-IA-les. Clique sur une carte pour la voir en grand et, quand il est disponible, découvrir le prompt qui l'a fait naître.</p>
     </section>
 
     <div class="toolbar" id="toolbar" hidden>
@@ -430,11 +479,19 @@
 
   <dialog id="visionneuse" aria-label="Carte en grand">
     <div class="vue">
-      <figure><img id="vue-img" alt=""></figure>
+      <div class="vue-corps">
+        <figure><img id="vue-img" alt=""></figure>
+        <aside class="prompt" id="vue-prompt" aria-labelledby="vue-prompt-titre" hidden>
+          <h2 id="vue-prompt-titre">Le prompt de cette carte</h2>
+          <p id="vue-prompt-texte"></p>
+          <button class="rond" type="button" id="vue-copier">Copier le prompt</button>
+        </aside>
+      </div>
       <div class="vue-actions">
         <button class="rond" type="button" id="vue-prec" aria-label="Carte précédente">←</button>
         <span class="vue-pos" id="vue-pos"></span>
         <button class="rond" type="button" id="vue-suiv" aria-label="Carte suivante">→</button>
+        <button class="rond" type="button" id="vue-btn-prompt" aria-expanded="false" aria-controls="vue-prompt">✎ Voir le prompt</button>
         <a class="rond primaire" id="vue-dl" download>Télécharger</a>
         <button class="rond" type="button" id="vue-fermer">Fermer ✕</button>
       </div>
@@ -470,7 +527,7 @@
         <img src="${c.mini}" width="${c.w}" height="${c.h}" loading="lazy" decoding="async" alt="">
         ${tampon("arc" + i)}
         <span class="timbre" aria-hidden="true"><span><b>IA</b>GORA<small>10.10.26</small></span></span>
-        <span class="legende"><span>N° ${String(i + 1).padStart(2, "0")}</span><span>${voie}</span></span>`;
+        <span class="legende"><span>N° ${String(i + 1).padStart(2, "0")}${c.prompt ? " · ✎ prompt" : ""}</span><span>${voie}</span></span>`;
       b.addEventListener("click", () => ouvrir(i));
       mur.appendChild(b);
     });
@@ -517,7 +574,34 @@
     const img = document.getElementById("vue-img");
     const pos = document.getElementById("vue-pos");
     const dl = document.getElementById("vue-dl");
+    const vue = dlg.querySelector(".vue");
+    const panneau = document.getElementById("vue-prompt");
+    const texte = document.getElementById("vue-prompt-texte");
+    const btnPrompt = document.getElementById("vue-btn-prompt");
+    const btnCopier = document.getElementById("vue-copier");
     let courant = 0;
+    let promptOuvert = false; // reste ouvert d'une carte à l'autre
+    function majPrompt() {
+      const prompt = cartes[courant].prompt;
+      btnPrompt.hidden = !prompt;
+      const visible = Boolean(prompt) && promptOuvert;
+      panneau.hidden = !visible;
+      vue.classList.toggle("avec-prompt", visible);
+      btnPrompt.setAttribute("aria-expanded", visible);
+      btnPrompt.textContent = visible ? "✎ Masquer le prompt" : "✎ Voir le prompt";
+      texte.textContent = prompt || "";
+      btnCopier.textContent = "Copier le prompt";
+    }
+    btnPrompt.addEventListener("click", () => { promptOuvert = !promptOuvert; majPrompt(); });
+    btnCopier.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(cartes[courant].prompt);
+        btnCopier.textContent = "Copié ✓";
+      } catch {
+        // Presse-papiers indisponible : on sélectionne le texte pour une copie manuelle
+        getSelection().selectAllChildren(texte);
+      }
+    });
     const visibles = () => [...mur.querySelectorAll(".carte:not([hidden])")].map(el => +el.dataset.index);
     function afficher(i) {
       courant = i;
@@ -527,6 +611,7 @@
       dl.href = c.src;
       const liste = visibles();
       pos.textContent = `${liste.indexOf(i) + 1} / ${liste.length}`;
+      majPrompt();
     }
     function ouvrir(i) { afficher(i); dlg.showModal(); }
     function decaler(d) {

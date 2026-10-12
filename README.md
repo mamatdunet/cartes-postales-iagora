@@ -16,16 +16,27 @@ Site statique de l'atelier :
    ```
 
    Une image posée directement dans `galerie/cartes/` s'affiche sans voie.
-2. Lancer le script (Python 3 et Pillow : `pip install Pillow`) :
+2. Lancer le script (Python 3 et Pillow). Sur Mac, le plus simple est un
+   environnement Python dédié, créé une seule fois :
 
    ```
-   python3 scripts/maj-galerie.py
+   python3 -m venv .venv
+   .venv/bin/pip install Pillow
+   .venv/bin/python scripts/maj-galerie.py
    ```
 
    Il crée les miniatures dans `galerie/cartes/mini/` et réécrit `galerie/cartes.js`.
 3. Commiter le tout (images, miniatures et `cartes.js`).
 
 Tant que la galerie est vide, elle affiche « Les cartes arrivent bientôt ».
+
+### Prompts
+
+Le script lit le prompt dans la métadonnée « description » de chaque image
+(texte PNG écrit par Midjourney, EXIF ImageDescription ou XMP dc:description) ;
+l'identifiant « Job ID » final de Midjourney est retiré. Dans la visionneuse,
+le bouton « ✎ Voir le prompt » l'affiche, avec un bouton pour le copier.
+Les cartes sans description s'affichent sans ce bouton.
 
 ## Album Google Photos (images Midjourney)
 
