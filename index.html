@@ -290,47 +290,43 @@
     .voie:hover .cta { background: var(--pink-600); color: var(--ink-900); }
     .voie:has(.tip:hover) .cta { background: var(--blue-600); color: var(--white); }
 
-    /* Lien mis en avant (voie 3), au-dessus du lien de carte */
-    .tip {
-      position: relative;
-      z-index: 1;
+    /* Bouton d'inspiration (voie 3), même forme que « C'est parti », en rose */
+    .inspi {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 14px;
-      padding: 10px 12px 10px 14px;
-      border: 2px solid var(--ink-900);
-      border-radius: var(--radius-md);
-      background: var(--white);
-      color: var(--ink-900);
-      text-decoration: none;
-      transition: background-color 220ms var(--ease-out), border-color 220ms var(--ease-out);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 2px dashed var(--ink-200);
     }
-    .tip-texte { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
-    .tip-surtitre {
-      font-size: 11px;
+    .inspi-surtitre {
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--pink-700);
     }
-    .tip-titre { font-size: 15px; font-weight: 700; line-height: 1.3; }
-    .tip-fleche {
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      width: 32px;
-      height: 32px;
-      margin-left: auto;
+    .tip {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
       border-radius: var(--radius-pill);
       background: var(--pink-600);
       color: var(--ink-900);
-      font-size: 15px;
+      font-family: var(--font-display);
+      font-size: 17px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-decoration: none;
       transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out);
     }
-    .tip:hover { background: var(--pink-50); border-color: var(--pink-600); }
-    .tip:hover .tip-fleche { background: var(--blue-600); color: var(--white); }
-    .tip:focus-visible { outline: none; border-color: var(--blue-600); box-shadow: 0 0 0 4px var(--blue-50); }
+    .tip:hover { background: var(--blue-600); color: var(--white); }
+    .tip:active { transform: scale(.97); }
+    .tip:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--blue-50), 0 0 0 6px var(--blue-600); }
     .url {
       display: block;
       margin-top: 10px;
@@ -380,7 +376,7 @@
       .voie { display: grid; grid-template-columns: 1fr auto; column-gap: 20px; }
       .voie .num, .voie h2, .voie p { grid-column: 1; }
       .voie .cta-box { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
-      .voie .tip { grid-column: 1 / -1; }
+      .voie .inspi { grid-column: 1 / -1; }
       .voie p { margin-bottom: 0; }
     }
 
@@ -400,6 +396,10 @@
       footer { padding: 10px 0 14px; }
     }
 
+    @media (max-width: 420px) {
+      .tip { padding: 12px 18px; font-size: 15px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .voie, .cta, .tip, .apercu, .hero-carte { transition: none; }
       .voie:hover { transform: none; }
@@ -411,7 +411,7 @@
     <div class="wrap">
       <a href="https://iagora.fr/" aria-label="IAgora"><img class="logo" src="assets/logo-iagora.png" alt="IAgora"></a>
       <a class="annonce" href="galerie/">
-        <span>Revoir toutes les cartes créées à <strong>IAgora Paris</strong> le samedi 10&nbsp;octobre dernier</span>
+        <span>Revoir toutes les cartes créées à <strong>IAgora Paris</strong> le samedi 10&nbsp;octobre &amp; à <strong>Strasbourg</strong> ce 14&nbsp;novembre</span>
         <span class="btn-annonce">Voir la galerie ➭</span>
       </a>
     </div>
@@ -473,13 +473,10 @@
             <a class="cta" href="https://www.midjourney.com/imagine" target="_blank" rel="noopener">C'est parti ➭</a>
             <span class="url">midjourney.com/imagine</span>
           </div>
-          <a class="tip" href="https://iagora-composer-image.vercel.app/" target="_blank" rel="noopener">
-            <span class="tip-texte">
-              <span class="tip-surtitre">Besoin d'inspiration ?</span>
-              <span class="tip-titre">Quelques idées pour composer son&nbsp;image</span>
-            </span>
-            <span class="tip-fleche" aria-hidden="true">➭</span>
-          </a>
+          <div class="inspi">
+            <span class="inspi-surtitre">Besoin d'inspiration ?</span>
+            <a class="tip" href="https://iagora-composer-image.vercel.app/" target="_blank" rel="noopener">Idées pour composer son&nbsp;image&nbsp;➭</a>
+          </div>
         </div>
       </div>
     </div>
