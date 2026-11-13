@@ -484,12 +484,18 @@
   </dialog>
 
   <script src="cartes.js"></script>
-  <script>
+  <script type="module">
     // Lien vers l'album Google Photos des images Midjourney : à renseigner.
     const ALBUM_GOOGLE_PHOTOS = "https://photos.app.goo.gl/zsy6qzvtjLHfVzq17";
 
     const NOMS_VOIES = { 1: "Ordinosaure", 2: "IA frugale", 3: "IA Rolls-Royce" };
-    const cartes = Array.isArray(window.CARTES) ? window.CARTES : [];
+    const cartes = Array.isArray(window.CARTES) ? [...window.CARTES] : [];
+    // Cartes publiées depuis WordArt 97 (api/cartes.js), les plus récentes en tête
+    try {
+      const r = await fetch("/api/cartes");
+      if (r.ok) cartes.unshift(...(await r.json()));
+    } catch { /* hors ligne ou API absente : on garde les cartes de l'atelier */ }
+    const echapper = t => String(t).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
     const mur = document.getElementById("mur");
     // Contour dentelé du timbre (demi-cercles creusés tout autour, comme un timbre Marianne)
     const DENTS = "M2.1 0H4.15 A2.1 2.1 0 0 0 8.35 0H10.4 A2.1 2.1 0 0 0 14.6 0H16.65 A2.1 2.1 0 0 0 20.85 0H22.9 A2.1 2.1 0 0 0 27.1 0H29.15 A2.1 2.1 0 0 0 33.35 0H35.4 A2.1 2.1 0 0 0 39.6 0H41.65 A2.1 2.1 0 0 0 45.85 0H47.9 A2.1 2.1 0 0 0 50 2.1V4.1 A2.1 2.1 0 0 0 50 8.3V10.3 A2.1 2.1 0 0 0 50 14.5V16.5 A2.1 2.1 0 0 0 50 20.7V22.7 A2.1 2.1 0 0 0 50 26.9V28.9 A2.1 2.1 0 0 0 50 33.1V35.1 A2.1 2.1 0 0 0 50 39.3V41.3 A2.1 2.1 0 0 0 50 45.5V47.5 A2.1 2.1 0 0 0 50 51.7V53.7 A2.1 2.1 0 0 0 50 57.9V59.9 A2.1 2.1 0 0 0 47.9 62H45.85 A2.1 2.1 0 0 0 41.65 62H39.6 A2.1 2.1 0 0 0 35.4 62H33.35 A2.1 2.1 0 0 0 29.15 62H27.1 A2.1 2.1 0 0 0 22.9 62H20.85 A2.1 2.1 0 0 0 16.65 62H14.6 A2.1 2.1 0 0 0 10.4 62H8.35 A2.1 2.1 0 0 0 4.15 62H2.1 A2.1 2.1 0 0 0 0 59.9V57.9 A2.1 2.1 0 0 0 0 53.7V51.7 A2.1 2.1 0 0 0 0 47.5V45.5 A2.1 2.1 0 0 0 0 41.3V39.3 A2.1 2.1 0 0 0 0 35.1V33.1 A2.1 2.1 0 0 0 0 28.9V26.9 A2.1 2.1 0 0 0 0 22.7V20.7 A2.1 2.1 0 0 0 0 16.5V14.5 A2.1 2.1 0 0 0 0 10.3V8.3 A2.1 2.1 0 0 0 0 4.1V2.1 A2.1 2.1 0 0 0 2.1 0Z";
@@ -521,12 +527,12 @@
       b.dataset.index = i;
       if (c.voie) b.dataset.voie = c.voie;
       const voie = c.voie ? `Voie ${c.voie} · ${NOMS_VOIES[c.voie]}` : "";
-      b.setAttribute("aria-label", `Carte n° ${i + 1}${voie ? ", " + voie : ""} : voir en grand`);
+      b.setAttribute("aria-label", `Carte n° ${i + 1}${c.pseudo ? " par " + c.pseudo : ""}${voie ? ", " + voie : ""} : voir en grand`);
       b.innerHTML = `
         <img src="${c.mini}" width="${c.w}" height="${c.h}" loading="lazy" decoding="async" alt="">
         ${tampon("arc" + i)}
         ${timbre(c.voie)}
-        <span class="legende"><span>N° ${String(i + 1).padStart(2, "0")}${c.prompt ? " · ✎ prompt" : ""}</span><span>${voie}</span></span>`;
+        <span class="legende"><span>N° ${String(i + 1).padStart(2, "0")}${c.pseudo ? " · par " + echapper(c.pseudo) : ""}${c.prompt ? " · ✎ prompt" : ""}</span><span>${voie}</span></span>`;
       b.addEventListener("click", () => ouvrir(i));
       mur.appendChild(b);
     });
@@ -606,7 +612,7 @@
       courant = i;
       const c = cartes[i];
       img.src = c.src;
-      img.alt = `Carte n° ${i + 1}` + (c.voie ? `, voie ${c.voie} · ${NOMS_VOIES[c.voie]}` : "");
+      img.alt = `Carte n° ${i + 1}` + (c.pseudo ? ` par ${c.pseudo}` : "") + (c.voie ? `, voie ${c.voie} · ${NOMS_VOIES[c.voie]}` : "");
       dl.href = c.src;
       const liste = visibles();
       pos.textContent = `${liste.indexOf(i) + 1} / ${liste.length}`;
